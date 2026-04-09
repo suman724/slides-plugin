@@ -22,7 +22,7 @@ import numpy as np
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROFILES_DIR = os.path.join(SCRIPT_DIR, "profiles")
 DEFAULT_OUTPUT = os.path.join(
-    SCRIPT_DIR, "..", "skills", "slides", "scripts", "style_library.json"
+    SCRIPT_DIR, "..", "slides", "scripts", "style_library.json"
 )
 
 

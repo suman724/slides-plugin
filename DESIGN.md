@@ -89,34 +89,27 @@ slides-plugin/
 │   ├── raw/                                 # Downloaded PPTX files (gitignored)
 │   └── profiles/                            # Per-file JSON profiles (gitignored)
 │
-├── skills/
-│   └── slides/
-│       ├── SKILL.md                         # Skill definition + orchestration
-│       ├── references/
-│       │   ├── semantic-content-model.md    # Full semantic JSON model docs
-│       │   ├── intent-reference.md          # All intents with examples
-│       │   ├── style-guide.md              # Available palettes and moods
-│       │   └── content-guidelines.md        # Deck patterns + content rules
-│       └── scripts/
-│           ├── generate_pptx.py             # Entry point: validate -> resolve -> map -> prevent -> render -> verify
-│           ├── style_resolver.py            # Resolves style preferences from library
-│           ├── intent_mapper.py             # Maps semantic intents to layout patterns
-│           ├── overflow.py                  # Layer 1: pre-render content/font/spacing adjustments
-│           ├── layout_engine.py             # Layer 2: generic zone-based renderer
-│           ├── shape_renderer.py            # Low-level shape/text/chart/table rendering
-│           ├── layout_validator.py          # Layer 3: post-render audit + corrective fixes
-│           └── style_library.json           # Build artifact from pipeline
+├── slides/                                  # THE SKILL -- copy to ~/.claude/skills/slides/
+│   ├── SKILL.md                             # Skill definition + orchestration
+│   ├── references/
+│   │   ├── semantic-content-model.md        # Full semantic JSON model docs
+│   │   ├── intent-reference.md              # All intents with examples
+│   │   ├── style-guide.md                  # Available palettes and moods
+│   │   └── content-guidelines.md            # Deck patterns + content rules
+│   └── scripts/
+│       ├── generate_pptx.py                 # Entry point: validate -> resolve -> map -> prevent -> render -> verify
+│       ├── style_resolver.py                # Resolves style preferences from library
+│       ├── intent_mapper.py                 # Maps semantic intents to layout patterns
+│       ├── overflow.py                      # Layer 1: pre-render content/font/spacing adjustments
+│       ├── layout_engine.py                 # Layer 2: generic zone-based renderer
+│       ├── shape_renderer.py                # Low-level shape/text/chart/table rendering
+│       ├── layout_validator.py              # Layer 3: post-render audit + corrective fixes
+│       └── style_library.json               # Build artifact from pipeline
 │
 ├── tests/
-│   ├── test_generate_pptx.py               # End-to-end generation tests
-│   ├── test_style_resolver.py              # Palette/typography resolution
-│   ├── test_intent_mapper.py               # Intent-to-layout mapping
-│   ├── test_overflow.py                    # Layer 1: overflow prevention
-│   ├── test_layout_validator.py            # Layer 3: post-render validation
-│   ├── test_edge_cases.py                  # Layer 4: edge-case suite (12 bullets, wide tables, etc.)
-│   ├── test_pipeline.py                    # Extraction/aggregation pipeline
-│   ├── generate_gallery.py                 # Visual test gallery generator
-│   └── sample_spec_v2.json                 # Semantic model sample spec
+│   ├── test_edge_cases.py                   # 20 edge-case tests (all intents, overflow, validation)
+│   ├── generate_gallery.py                  # Visual test gallery generator
+│   └── sample_spec_v2.json                  # Semantic model sample spec
 │
 ├── requirements.txt                         # Runtime: python-pptx
 ├── DESIGN.md                                # This file
