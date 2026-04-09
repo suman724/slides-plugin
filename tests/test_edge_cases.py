@@ -9,7 +9,7 @@ import sys
 import os
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'skills', 'slides', 'scripts'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'slides', 'scripts'))
 
 # Clear cached library between test files
 import style_resolver

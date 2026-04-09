@@ -8,7 +8,7 @@ import sys
 import os
 import json
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'skills', 'slides', 'scripts'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'slides', 'scripts'))
 
 import style_resolver
 style_resolver._cached_library = None

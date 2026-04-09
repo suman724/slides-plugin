@@ -4,3 +4,4 @@ __pycache__/
 pipeline/raw/
 pipeline/profiles/
 .pytest_cache/
+.DS_Store

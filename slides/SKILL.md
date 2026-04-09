@@ -106,13 +106,13 @@ python3 -c "import pptx" 2>/dev/null || pip3 install python-pptx
 
 4. Find the script path and run generation:
 ```bash
-SKILL_DIR="$(find ~/.claude/skills . -path '*/skills/slides/scripts/generate_pptx.py' -print -quit 2>/dev/null | xargs dirname)"
+SKILL_DIR="$(find ~/.claude/skills . -path '*/slides/scripts/generate_pptx.py' -print -quit 2>/dev/null | xargs dirname)"
 python3 "$SKILL_DIR/generate_pptx.py" --input ./<name>.spec.json --output ./<name>.pptx
 ```
 
 If the find command fails, try the project-local path:
 ```bash
-python3 skills/slides/scripts/generate_pptx.py --input ./<name>.spec.json --output ./<name>.pptx
+python3 slides/scripts/generate_pptx.py --input ./<name>.spec.json --output ./<name>.pptx
 ```
 
 ### Step 6: Report Results
@@ -179,7 +179,7 @@ User says: `/slides quarterly business review for Acme Corp, revenue $142M +18% 
 
 **Step 5**: Run generation:
 ```bash
-python3 skills/slides/scripts/generate_pptx.py --input ./acme_q3_review.spec.json --output ./acme_q3_review.pptx
+python3 slides/scripts/generate_pptx.py --input ./acme_q3_review.spec.json --output ./acme_q3_review.pptx
 ```
 
 **Step 6**: "Generated `acme_q3_review.pptx` with 10 slides: cover, agenda, 3 sections (KPIs, chart, market analysis), takeaways, closing. No warnings."
