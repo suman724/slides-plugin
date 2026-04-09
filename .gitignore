@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.pptx
+pipeline/raw/
+pipeline/profiles/
+.pytest_cache/
