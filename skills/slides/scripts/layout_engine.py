@@ -315,14 +315,14 @@ def _to_inches(bounds_pct, slide_w, slide_h):
 
     # Clamp right edge to slide width minus margin
     if left + width > slide_w - MIN_MARGIN:
-        width = slide_w - MIN_MARGIN - left
+        width = max(0.5, slide_w - MIN_MARGIN - left)
 
     # Clamp bottom edge to above footer zone
     max_bottom = slide_h - FOOTER_RESERVED
     if top + height > max_bottom:
         height = max(0.5, max_bottom - top)
 
-    # Ensure minimum content width
+    # Ensure minimum content width (catches negative or very small widths)
     if width < 2.0:
         left = MIN_MARGIN
         width = slide_w - 2 * MIN_MARGIN

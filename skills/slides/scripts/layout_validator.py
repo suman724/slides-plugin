@@ -219,12 +219,13 @@ def _fix_overlap(shape_above, shape_below):
     shape_above.height = Inches(target_height)
 
     # If upper shape has text that won't fit at the new height, reduce font
+    # Re-read bounds since shape was just resized
+    updated_bounds = _shape_bounds(shape_above)
     text_a = _shape_text(shape_above)
     font_a = _shape_font_size(shape_above)
     if text_a and font_a:
-        est = _estimate_text_height(text_a, bounds_a["width"], font_a)
-        if est > target_height:
-            # Reduce font until it fits
+        est = _estimate_text_height(text_a, updated_bounds["width"], font_a)
+        if est > updated_bounds["height"]:
             _fix_text_overflow(shape_above)
 
     return True

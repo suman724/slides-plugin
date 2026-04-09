@@ -115,8 +115,11 @@ def _adapt_intent(intent, slide_spec):
     if intent == "explain":
         points = slide_spec.get("points", [])
         # Single short point -> emphasize instead
-        if len(points) == 1 and len(points[0].get("text", "")) < 50:
-            return "emphasize"
+        if len(points) == 1:
+            p = points[0]
+            text = p.get("text", "") if isinstance(p, dict) else str(p)
+            if len(text) < 50:
+                return "emphasize"
 
     return intent
 
@@ -301,18 +304,23 @@ def _enforce_min_zone_width(pattern, intent):
 
     new_zones = []
     for zone in zones:
-        z = dict(zone)
-        b = dict(z["bounds_pct"])
-        if z["role"] == "content" and b["width"] < MIN_CONTENT_WIDTH:
-            b["left"] = MIN_CONTENT_LEFT
-            b["width"] = MIN_CONTENT_WIDTH
+        b = zone["bounds_pct"]
+        if zone["role"] == "content" and b["width"] < MIN_CONTENT_WIDTH:
+            # Deep copy to avoid mutating the cached library pattern
+            new_zone = {"role": zone["role"], "bounds_pct": {
+                "left": MIN_CONTENT_LEFT,
+                "top": b["top"],
+                "width": MIN_CONTENT_WIDTH,
+                "height": b["height"],
+            }}
+            new_zones.append(new_zone)
             adjusted = True
-        z["bounds_pct"] = b
-        new_zones.append(z)
+        else:
+            new_zones.append(zone)
 
     if adjusted:
-        pattern = dict(pattern)
-        pattern["zones"] = new_zones
+        # Create a new pattern dict (don't mutate the original)
+        pattern = {**pattern, "zones": new_zones}
 
     return pattern
 

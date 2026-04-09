@@ -130,9 +130,10 @@ def _handle_bullets(spec, zone_height, zone_width, result, slide_title):
 
     # Strategy 3: Content splitting
     if n_points > HARD_MAX_BULLETS:
+        import copy
         mid = n_points // 2
+        extra_slide = copy.deepcopy(spec)
         spec["points"] = points[:mid]
-        extra_slide = dict(spec)
         extra_slide["points"] = points[mid:]
         extra_slide["title"] = f"{slide_title} (continued)"
         result.extra_slides.append(extra_slide)
@@ -199,12 +200,13 @@ def _handle_metrics(spec, zone_width, result, slide_title):
         )
     else:
         # 7+: split into slides of 4
+        import copy
         spec["metrics"] = metrics[:MAX_METRICS_PER_SLIDE]
         remaining = metrics[MAX_METRICS_PER_SLIDE:]
         while remaining:
             chunk = remaining[:MAX_METRICS_PER_SLIDE]
             remaining = remaining[MAX_METRICS_PER_SLIDE:]
-            extra = dict(spec)
+            extra = copy.deepcopy(spec)
             extra["metrics"] = chunk
             extra["title"] = f"{slide_title} (continued)"
             result.extra_slides.append(extra)
@@ -229,12 +231,13 @@ def _handle_table(spec, zone_width, zone_height, result, slide_title):
 
     # Too tall -- split
     if n_rows > MAX_TABLE_ROWS:
+        import copy
         spec["rows"] = rows[:MAX_TABLE_ROWS]
         remaining = rows[MAX_TABLE_ROWS:]
         while remaining:
             chunk = remaining[:MAX_TABLE_ROWS]
             remaining = remaining[MAX_TABLE_ROWS:]
-            extra = dict(spec)
+            extra = copy.deepcopy(spec)
             extra["rows"] = chunk
             extra["title"] = f"{slide_title} (continued)"
             result.extra_slides.append(extra)
@@ -260,9 +263,10 @@ def _handle_timeline(spec, result, slide_title):
         )
     else:
         # Split into 2 timelines
+        import copy
         mid = n // 2
+        extra = copy.deepcopy(spec)
         spec["steps"] = steps[:mid]
-        extra = dict(spec)
         extra["steps"] = steps[mid:]
         extra["title"] = f"{slide_title} (continued)"
         result.extra_slides.append(extra)
@@ -272,26 +276,33 @@ def _handle_timeline(spec, result, slide_title):
 
 
 def _handle_compare(spec, result, slide_title):
-    """Handle compare/evaluate with too many options."""
-    # Compare
+    """Handle compare/evaluate with too many options.
+
+    Note: 3 sides/options is normal for categorize -- only split at 4+.
+    The intent mapper upgrades compare with 3+ sides to categorize,
+    so by the time we get here, categorize with 3 is expected.
+    """
+    import copy
+
+    # Compare / Categorize -- split at 4+ sides
     sides = spec.get("sides", [])
     if len(sides) > 3:
-        spec["sides"] = sides[:2]
-        for i in range(2, len(sides), 2):
-            extra = dict(spec)
-            extra["sides"] = sides[i:i+2]
+        spec["sides"] = sides[:3]
+        for i in range(3, len(sides), 3):
+            extra = copy.deepcopy(spec)
+            extra["sides"] = sides[i:i+3]
             extra["title"] = f"{slide_title} (continued)"
             result.extra_slides.append(extra)
         result.warnings.append(
             f"WARNING: Split '{slide_title}' comparison into {1 + len(result.extra_slides)} slides"
         )
 
-    # Evaluate
+    # Evaluate -- split at 3+ options
     options = spec.get("options", [])
     if len(options) > 3:
         spec["options"] = options[:2]
         for i in range(2, len(options), 2):
-            extra = dict(spec)
+            extra = copy.deepcopy(spec)
             extra["options"] = options[i:i+2]
             extra["title"] = f"{slide_title} (continued)"
             result.extra_slides.append(extra)
@@ -320,9 +331,10 @@ def _handle_agenda(spec, zone_height, result, slide_title):
         )
     else:
         # Split into 2 slides
+        import copy
         mid = n // 2
+        extra = copy.deepcopy(spec)
         spec["items"] = items[:mid]
-        extra = dict(spec)
         extra["items"] = items[mid:]
         extra["title"] = f"{slide_title} (continued)"
         result.extra_slides.append(extra)
@@ -442,9 +454,6 @@ def apply_overflow_rules(slide_spec, layout_pattern, resolved_style):
 
     elif intent in ("compare", "evaluate", "categorize"):
         _handle_compare(slide_spec, result, title)
-
-    elif intent == "outline":
-        _handle_agenda(slide_spec, zone_height, result, title)
 
     result.adjusted_spec = slide_spec
     return result

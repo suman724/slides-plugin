@@ -26,16 +26,6 @@ def _apply_font(run, font_role, color=None):
         run.font.color.rgb = color
 
 
-def _bounds_to_inches(bounds_pct, slide_w, slide_h):
-    """Convert proportional bounds to (left, top, width, height) in inches."""
-    return (
-        bounds_pct["left"] * slide_w,
-        bounds_pct["top"] * slide_h,
-        bounds_pct["width"] * slide_w,
-        bounds_pct["height"] * slide_h,
-    )
-
-
 # ---------------------------------------------------------------------------
 # Background
 # ---------------------------------------------------------------------------
@@ -314,12 +304,20 @@ CHART_TYPE_MAP = {
 
 def render_chart(slide, chart_spec, left, top, width, height, style):
     """Render a chart from a chart specification."""
+    series_list = chart_spec.get("series", [])
+    categories = chart_spec.get("categories", [])
+    if not series_list or not categories:
+        # Nothing to chart -- render a placeholder text instead
+        render_text(slide, "[No chart data]", left, top + height / 2 - 0.25, width, 0.50,
+                    style.typography.body, style.text_secondary, alignment=PP_ALIGN.CENTER)
+        return None
+
     chart_type_str = chart_spec.get("type", "column_clustered")
     xl_type = CHART_TYPE_MAP.get(chart_type_str, XL_CHART_TYPE.COLUMN_CLUSTERED)
 
     chart_data = CategoryChartData()
-    chart_data.categories = chart_spec.get("categories", [])
-    for series in chart_spec.get("series", []):
+    chart_data.categories = categories
+    for series in series_list:
         chart_data.add_series(series["name"], series["values"])
 
     chart_frame = slide.shapes.add_chart(
@@ -564,8 +562,10 @@ def render_emphasis(slide, emphasis_data, left, top, width, height, style):
             )
 
         if context:
+            # Use proportional insets that work for any zone width
+            inset = min(1.5, width * 0.12)
             render_text(
-                slide, context, left + 1.5, top + 2.70, width - 3.0, 0.80,
+                slide, context, left + inset, top + 2.70, max(2.0, width - 2 * inset), 0.80,
                 style.typography.body, style.text_secondary,
                 alignment=PP_ALIGN.CENTER,
             )

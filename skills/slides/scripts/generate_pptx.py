@@ -10,6 +10,7 @@ Usage:
 """
 
 import argparse
+import copy
 import json
 import os
 import sys
@@ -92,6 +93,8 @@ def generate(spec):
     # Process slides, collecting any extra slides from content splitting
     all_slide_specs = []
     for slide_spec in slides_spec:
+        # Deep copy to avoid mutating the original spec
+        slide_spec = copy.deepcopy(slide_spec)
         intent = slide_spec.get("intent", "explain")
         layout_pattern, content_mapping, adapted_intent = resolve_layout(intent, slide_spec)
 
@@ -194,7 +197,7 @@ def main():
 
     prs.save(output_path)
     print(f"Presentation saved to: {os.path.abspath(output_path)}")
-    print(f"  Slides: {len(spec['slides'])}")
+    print(f"  Slides: {len(prs.slides)}")
 
 
 if __name__ == "__main__":
