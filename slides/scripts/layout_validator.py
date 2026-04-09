@@ -133,10 +133,10 @@ def _validate_slide(slide, slide_index, slide_width, slide_height):
                 f"Shape starts before top edge ({bounds['top']:.2f}\")"
             ))
 
-        # Check: text overflow
+        # Check: text overflow (1.2x threshold -- tight to catch real overflow)
         if text and font_size and bounds["width"] > 0.2:
             est_height = _estimate_text_height(text, bounds["width"], font_size)
-            if est_height > bounds["height"] * 1.5 and bounds["height"] > 0.05:
+            if est_height > bounds["height"] * 1.2 and bounds["height"] > 0.05:
                 issues.append(ValidationIssue(
                     slide_index, j, "text_overflow", "warning",
                     f"Text may overflow ({est_height:.2f}\" > {bounds['height']:.2f}\"): \"{text[:30]}...\""
@@ -254,7 +254,7 @@ def _fix_text_overflow(shape):
                 # Find the smallest size that fits the box
                 for try_size in range(int(current) - 2, MIN_FONT_PT - 1, -2):
                     est = _estimate_text_height(text, bounds["width"], try_size)
-                    if est <= bounds["height"] * 1.3:
+                    if est <= bounds["height"] * 1.1:
                         run.font.size = Pt(try_size)
                         fixed = True
                         break

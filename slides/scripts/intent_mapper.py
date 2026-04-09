@@ -156,6 +156,11 @@ def map_content_to_zones(intent, slide_spec, layout_pattern):
         mapping["number"] = slide_spec.get("section_number", "")
 
     # Content zone -- maps differently per intent
+    # Skip content zone if a dedicated zone already handles the data
+    # (e.g., don't put chart in content zone if a chart zone exists)
+    has_dedicated_chart = "chart" in zones
+    has_dedicated_table = "table" in zones
+
     if "content" in zones:
         if intent == "explain":
             mapping["content"] = {"type": "bullets", "data": slide_spec.get("points", [])}
@@ -169,9 +174,9 @@ def map_content_to_zones(intent, slide_spec, layout_pattern):
             mapping["content"] = {"type": "columns", "data": sides}
         elif intent == "measure":
             mapping["content"] = {"type": "metrics", "data": slide_spec.get("metrics", [])}
-        elif intent == "visualize":
+        elif intent == "visualize" and not has_dedicated_chart:
             mapping["content"] = {"type": "chart", "data": slide_spec.get("chart", {})}
-        elif intent == "tabulate":
+        elif intent == "tabulate" and not has_dedicated_table:
             mapping["content"] = {
                 "type": "table",
                 "columns": slide_spec.get("columns", []),

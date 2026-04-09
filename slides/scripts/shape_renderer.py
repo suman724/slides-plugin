@@ -333,13 +333,26 @@ def render_chart(slide, chart_spec, left, top, width, height, style):
     chart.legend.font.name = style.typography.body.name
 
     plot = chart.plots[0]
-    for i, series in enumerate(plot.series):
-        idx = i % len(style.chart_colors)
-        series.format.fill.solid()
-        series.format.fill.fore_color.rgb = style.chart_colors[idx]
-        if xl_type in (XL_CHART_TYPE.LINE, XL_CHART_TYPE.LINE_MARKERS):
-            series.format.line.color.rgb = style.chart_colors[idx]
-            series.format.line.width = Pt(2.5)
+    is_pie_type = xl_type in (XL_CHART_TYPE.PIE, XL_CHART_TYPE.DOUGHNUT)
+
+    if is_pie_type:
+        # Pie/doughnut: color each data POINT (segment), not the series
+        if plot.series:
+            series = plot.series[0]
+            for pt_idx in range(len(categories)):
+                color_idx = pt_idx % len(style.chart_colors)
+                point = series.points[pt_idx]
+                point.format.fill.solid()
+                point.format.fill.fore_color.rgb = style.chart_colors[color_idx]
+    else:
+        # Bar/column/line/area: color each series
+        for i, series in enumerate(plot.series):
+            idx = i % len(style.chart_colors)
+            series.format.fill.solid()
+            series.format.fill.fore_color.rgb = style.chart_colors[idx]
+            if xl_type in (XL_CHART_TYPE.LINE, XL_CHART_TYPE.LINE_MARKERS):
+                series.format.line.color.rgb = style.chart_colors[idx]
+                series.format.line.width = Pt(2.5)
 
     try:
         chart.category_axis.tick_labels.font.size = Pt(9)

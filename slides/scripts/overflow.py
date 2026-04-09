@@ -154,33 +154,50 @@ def _handle_bullets(spec, zone_height, zone_width, result, slide_title):
             )
 
 
-def _handle_title(spec, zone_width, result):
-    """Handle overly long title."""
+def _get_title_font_size(intent, resolved_style):
+    """Get the actual font size the renderer will use for titles.
+
+    Different intents render titles at different sizes:
+    - open, close, divide: display font (larger)
+    - everything else: title font (standard)
+    """
+    if intent in ("open", "close", "divide"):
+        return resolved_style.typography.display.size_pt
+    return resolved_style.typography.title.size_pt
+
+
+def _handle_title(spec, zone_width, zone_height, result, intent, resolved_style):
+    """Handle overly long title using actual rendering font size."""
     title = spec.get("title", "")
     if not title:
         return
 
-    title_pt = 28
+    title_pt = _get_title_font_size(intent, resolved_style)
+    line_height = (title_pt + 8) / 72
+    max_lines = max(1, int(zone_height / line_height))
     lines = _estimate_text_lines(title, zone_width, title_pt)
 
-    if lines > 2:
+    if lines > max_lines:
         # Try reducing font
-        for pt in range(26, MIN_TITLE_PT - 1, -2):
-            if _estimate_text_lines(title, zone_width, pt) <= 2:
+        for pt in range(int(title_pt) - 2, MIN_TITLE_PT - 1, -2):
+            lh = (pt + 8) / 72
+            ml = max(1, int(zone_height / lh))
+            if _estimate_text_lines(title, zone_width, pt) <= ml:
                 result.font_overrides["title"] = pt
                 result.warnings.append(
-                    f"INFO: Reduced title font to {pt}pt ({len(title)} chars)"
+                    f"INFO: Reduced title font to {pt}pt ({len(title)} chars, {intent} intent)"
                 )
                 return
 
         # Truncate as last resort
         char_width = (MIN_TITLE_PT * 0.55) / 72
-        max_chars = int(zone_width / char_width) * 2  # 2 lines
-        spec["title"] = title[:max_chars - 3] + "..."
-        result.font_overrides["title"] = MIN_TITLE_PT
-        result.warnings.append(
-            f"WARNING: Truncated title at {max_chars} chars"
-        )
+        max_chars = int(zone_width / char_width) * max_lines
+        if len(title) > max_chars:
+            spec["title"] = title[:max_chars - 3] + "..."
+            result.font_overrides["title"] = MIN_TITLE_PT
+            result.warnings.append(
+                f"WARNING: Truncated title at {max_chars} chars"
+            )
 
 
 def _handle_metrics(spec, zone_width, result, slide_title):
@@ -414,14 +431,16 @@ def apply_overflow_rules(slide_spec, layout_pattern, resolved_style):
         zone_width = sw * 0.85
         zone_height = 5.0
 
-    # Title zone width
+    # Title zone dimensions
     title_width = sw * 0.85
+    title_height = 1.0  # default
     if title_zone:
         title_width = title_zone["bounds_pct"]["width"] * sw
+        title_height = title_zone["bounds_pct"]["height"] * sh
 
     # --- Apply handlers based on intent ---
 
-    _handle_title(slide_spec, title_width, result)
+    _handle_title(slide_spec, title_width, title_height, result, intent, resolved_style)
 
     if intent in ("explain", "outline", "summarize"):
         if intent == "outline":
