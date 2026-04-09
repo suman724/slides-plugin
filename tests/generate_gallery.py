@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Generate a gallery PPTX with every slide type in every theme for visual testing."""
+"""Generate gallery PPTX files for visual verification.
+
+Creates a presentation with every intent type to visually test rendering quality.
+"""
 
 import sys
 import os
@@ -7,235 +10,125 @@ import json
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'skills', 'slides', 'scripts'))
 
+import style_resolver
+style_resolver._cached_library = None
+
 from generate_pptx import generate
-from pptx import Presentation
 
-# Complete spec exercising every slide type
-GALLERY_SLIDES = [
-    {
-        "type": "title",
-        "title": "Gallery: {theme_name}",
-        "subtitle": "Visual test of all slide layouts",
+
+GALLERY_SPEC = {
+    "metadata": {
+        "title": "Gallery: All Intents",
+        "company": "Acme Corp",
+        "confidentiality": "Internal",
         "date": "April 2026",
-        "confidentiality": "Internal"
     },
-    {
-        "type": "agenda",
-        "title": "Agenda",
-        "items": [
-            {"number": 1, "text": "Content Layouts", "subtext": "Standard content delivery slides"},
-            {"number": 2, "text": "Data Layouts", "subtext": "Charts, tables, and metrics"},
-            {"number": 3, "text": "Analysis Layouts", "subtext": "Comparison, timeline, takeaway"},
-            {"number": 4, "text": "Special Layouts", "subtext": "Quote, big number, image"}
-        ]
-    },
-    {
-        "type": "section_divider",
-        "section_number": 1,
-        "title": "Content Layouts",
-        "subtitle": "Standard content delivery slides"
-    },
-    {
-        "type": "content",
-        "title": "Content Slide Example",
-        "body": [
-            {"type": "bullet", "text": "First main point with important information", "level": 0},
-            {"type": "bullet", "text": "Supporting detail for first point", "level": 1},
-            {"type": "bullet", "text": "Another supporting detail", "level": 1},
-            {"type": "bullet", "text": "Second main point with key data", "level": 0},
-            {"type": "bullet", "text": "Third main point about outcomes", "level": 0},
-            {"type": "bullet", "text": "Additional context for third point", "level": 1}
-        ]
-    },
-    {
-        "type": "two_column",
-        "title": "Two Column Layout",
-        "left": {
-            "heading": "Current State",
-            "body": [
-                {"type": "bullet", "text": "Existing capability A", "level": 0},
-                {"type": "bullet", "text": "Existing capability B", "level": 0},
-                {"type": "bullet", "text": "Known limitation", "level": 0}
-            ]
-        },
-        "right": {
-            "heading": "Future State",
-            "body": [
-                {"type": "bullet", "text": "Enhanced capability A", "level": 0},
-                {"type": "bullet", "text": "New capability C", "level": 0},
-                {"type": "bullet", "text": "Limitation resolved", "level": 0}
-            ]
-        }
-    },
-    {
-        "type": "three_column",
-        "title": "Three Column Layout",
-        "columns": [
-            {
-                "heading": "Phase 1",
-                "body": [
-                    {"type": "bullet", "text": "Foundation work", "level": 0},
-                    {"type": "bullet", "text": "Core features", "level": 0}
-                ]
-            },
-            {
-                "heading": "Phase 2",
-                "body": [
-                    {"type": "bullet", "text": "Advanced features", "level": 0},
-                    {"type": "bullet", "text": "Integration", "level": 0}
-                ]
-            },
-            {
-                "heading": "Phase 3",
-                "body": [
-                    {"type": "bullet", "text": "Optimization", "level": 0},
-                    {"type": "bullet", "text": "Scale", "level": 0}
-                ]
-            }
-        ]
-    },
-    {
-        "type": "section_divider",
-        "section_number": 2,
-        "title": "Data Layouts",
-        "subtitle": "Charts, tables, and metrics"
-    },
-    {
-        "type": "chart",
-        "title": "Column Chart Example",
-        "chart_type": "column_clustered",
-        "categories": ["Q1", "Q2", "Q3", "Q4"],
-        "series": [
-            {"name": "2025", "values": [100, 110, 120, 130]},
-            {"name": "2026", "values": [115, 125, 135, 145]}
-        ],
-        "annotation": "Consistent quarter-over-quarter growth across both years"
-    },
-    {
-        "type": "chart",
-        "title": "Line Chart Example",
-        "chart_type": "line_markers",
-        "categories": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-        "series": [
-            {"name": "Users (K)", "values": [12, 15, 18, 22, 28, 35]},
-            {"name": "Target (K)", "values": [14, 17, 20, 24, 28, 32]}
-        ]
-    },
-    {
-        "type": "table",
-        "title": "Table Layout Example",
-        "columns": ["Region", "Revenue", "Growth", "Margin"],
-        "rows": [
-            ["North America", "$85M", "+15%", "72%"],
-            ["Europe", "$42M", "+22%", "68%"],
-            ["Asia Pacific", "$28M", "+35%", "65%"],
-            ["Rest of World", "$12M", "+18%", "60%"]
-        ],
-        "highlight_rules": [
-            {"column": 2, "condition": "positive", "color": "green"}
-        ]
-    },
-    {
-        "type": "key_metrics",
-        "title": "Key Metrics Dashboard",
-        "metrics": [
-            {"label": "Revenue", "value": "$167M", "delta": "+22%", "direction": "up"},
-            {"label": "Customers", "value": "2,450", "delta": "+340", "direction": "up"},
-            {"label": "NPS", "value": "72", "delta": "+8", "direction": "up"},
-            {"label": "Churn", "value": "3.1%", "delta": "+0.5pp", "direction": "down"}
-        ]
-    },
-    {
-        "type": "section_divider",
-        "section_number": 3,
-        "title": "Analysis Layouts",
-        "subtitle": "Comparison, timeline, takeaway"
-    },
-    {
-        "type": "comparison",
-        "title": "Comparison Layout",
-        "left": {
-            "heading": "Build In-House",
-            "pros": ["Full control", "Custom fit", "IP ownership"],
-            "cons": ["12-18 month timeline", "Hiring required"]
-        },
-        "right": {
-            "heading": "Buy / Partner",
-            "pros": ["Faster time to market", "Proven solution"],
-            "cons": ["Vendor dependency", "Less customization", "Ongoing costs"]
-        }
-    },
-    {
-        "type": "timeline",
-        "title": "Timeline Layout",
-        "milestones": [
-            {"date": "Q1 2026", "label": "Discovery", "detail": "Requirements and research"},
-            {"date": "Q2 2026", "label": "Design", "detail": "Architecture and prototyping"},
-            {"date": "Q3 2026", "label": "Build", "detail": "Core development sprint"},
-            {"date": "Q4 2026", "label": "Launch", "detail": "GA release and rollout"}
-        ]
-    },
-    {
-        "type": "takeaway",
-        "title": "Key Takeaways",
-        "points": [
-            "First important conclusion from the analysis",
-            "Second key finding that drives the recommendation",
-            "Third point that supports the proposed next steps"
-        ],
-        "call_to_action": "Approve the proposed roadmap and allocate Q1 budget"
-    },
-    {
-        "type": "big_number",
-        "title": "Market Opportunity",
-        "value": "$12.5B",
-        "label": "Total Addressable Market by 2028",
-        "context": "Growing at 18% CAGR driven by enterprise digital transformation"
-    },
-    {
-        "type": "quote",
-        "title": "",
-        "quote": "Innovation distinguishes between a leader and a follower.",
-        "attribution": "Steve Jobs"
-    },
-    {
-        "type": "closing",
-        "title": "Thank You",
-        "subtitle": "Questions & Discussion",
-        "contact": "team@company.com"
-    }
-]
+    "slides": [
+        {"intent": "open", "title": "Gallery: All 15 Intents", "subtitle": "Visual Verification Deck"},
+        {"intent": "outline", "title": "Agenda", "items": [
+            {"text": "Content Intents", "detail": "explain, compare, categorize"},
+            {"text": "Data Intents", "detail": "measure, visualize, tabulate"},
+            {"text": "Analysis Intents", "detail": "evaluate, sequence, summarize"},
+            {"text": "Special Intents", "detail": "emphasize, illustrate"},
+        ]},
+        {"intent": "divide", "title": "Content Intents", "subtitle": "explain, compare, categorize", "section_number": 1},
+        {"intent": "explain", "title": "Key Market Trends", "points": [
+            {"text": "Total addressable market grew 12% YoY to $4.2B", "subpoints": [
+                "Enterprise segment accounts for 65% of growth",
+                "SMB segment showing early signs of recovery",
+            ]},
+            {"text": "Competitor X launched adjacent product in Q2"},
+            {"text": "Regulatory changes expected in H2 2026", "subpoints": [
+                "New compliance framework will require certification",
+            ]},
+        ]},
+        {"intent": "compare", "title": "Revenue vs. Plan", "sides": [
+            {"heading": "Performance", "points": ["Revenue: $142M (+18% YoY)", "Gross margin: 72%", "Free cash flow: $28M"]},
+            {"heading": "Commentary", "points": ["Enterprise pipeline strong", "SMB churn at 4.2%", "PLG showing results"]},
+        ]},
+        {"intent": "categorize", "title": "Implementation Phases", "sides": [
+            {"heading": "Phase 1", "points": ["Foundation", "Core features", "Team setup"]},
+            {"heading": "Phase 2", "points": ["Advanced features", "Integration", "Testing"]},
+            {"heading": "Phase 3", "points": ["Optimization", "Scale", "Launch"]},
+        ]},
+        {"intent": "divide", "title": "Data Intents", "subtitle": "measure, visualize, tabulate", "section_number": 2},
+        {"intent": "measure", "title": "Key Performance Indicators", "metrics": [
+            {"label": "ARR", "value": "$568M", "change": "+18%", "trend": "up"},
+            {"label": "NRR", "value": "118%", "change": "+3pp", "trend": "up"},
+            {"label": "CAC Payback", "value": "14mo", "change": "-2mo", "trend": "up"},
+            {"label": "Churn", "value": "4.2%", "change": "+0.8pp", "trend": "down"},
+        ]},
+        {"intent": "visualize", "title": "Revenue by Quarter", "chart": {
+            "type": "column_clustered",
+            "categories": ["Q1 '25", "Q2 '25", "Q3 '25", "Q4 '25", "Q1 '26", "Q2 '26", "Q3 '26"],
+            "series": [
+                {"name": "Revenue ($M)", "values": [98, 105, 112, 120, 128, 135, 142]},
+                {"name": "Target ($M)", "values": [100, 108, 115, 122, 130, 138, 145]},
+            ],
+        }, "note": "Q3 revenue within 2% of target despite macro headwinds"},
+        {"intent": "tabulate", "title": "P&L Summary ($M)", "columns": ["Metric", "Q3 Actual", "Q3 Plan", "Variance", "YoY"],
+         "rows": [
+            ["Revenue", "142", "145", "-2%", "+18%"],
+            ["Gross Profit", "102", "102", "0%", "+20%"],
+            ["EBITDA", "38", "40", "-5%", "+25%"],
+            ["Net Income", "22", "24", "-8%", "+30%"],
+         ], "highlight_rules": [
+            {"column": 3, "condition": "negative", "color": "red"},
+            {"column": 4, "condition": "positive", "color": "green"},
+         ]},
+        {"intent": "divide", "title": "Analysis Intents", "subtitle": "evaluate, sequence, summarize", "section_number": 3},
+        {"intent": "evaluate", "title": "Strategic Options", "options": [
+            {"heading": "Organic Growth", "advantages": ["Lower risk", "Preserves cash", "Team focus"], "challenges": ["Slower capture", "Competitor gap"]},
+            {"heading": "Acquisition", "advantages": ["Immediate share", "Tech synergies", "Talent"], "challenges": ["Integration risk", "$200M capital"]},
+        ]},
+        {"intent": "sequence", "title": "Implementation Roadmap", "steps": [
+            {"when": "Q4 2026", "what": "Board Approval", "detail": "Final decision"},
+            {"when": "Q1 2027", "what": "Execution", "detail": "Team formation"},
+            {"when": "Q2 2027", "what": "Phase 1", "detail": "Initial milestone"},
+            {"when": "Q4 2027", "what": "Value Realization", "detail": "Synergy capture"},
+        ]},
+        {"intent": "summarize", "title": "Key Takeaways", "takeaways": [
+            "Q3 performance strong despite macro headwinds; within 2% of plan",
+            "Enterprise pipeline robust; SMB churn requires immediate action",
+            "Board decision on strategic direction needed by Q4 2026",
+        ], "action": "Approve formation of Strategic Evaluation Committee"},
+        {"intent": "divide", "title": "Special Intents", "subtitle": "emphasize, illustrate", "section_number": 4},
+        {"intent": "emphasize", "title": "Market Opportunity", "emphasis": {
+            "type": "number", "value": "$4.2B", "label": "Total Addressable Market",
+            "context": "Growing at 12% annually with enterprise segment driving 65% of new demand",
+        }},
+        {"intent": "emphasize", "emphasis": {
+            "type": "quote",
+            "text": "The best way to predict the future is to create it.",
+            "attribution": "Peter Drucker",
+        }},
+        {"intent": "illustrate", "title": "Product Screenshot", "points": [
+            {"text": "New dashboard provides real-time visibility"},
+            {"text": "Customizable widgets for each team"},
+            {"text": "Mobile-responsive design"},
+        ]},
+        {"intent": "close", "title": "Thank You", "subtitle": "Questions & Discussion", "contact": "strategy@acme.com"},
+    ],
+}
 
 
-def generate_gallery():
-    themes = ["corporate_blue", "modern_dark", "minimal"]
+def main():
     output_dir = os.path.join(os.path.dirname(__file__), "gallery")
     os.makedirs(output_dir, exist_ok=True)
 
-    for theme_name in themes:
-        # Customize title slide with theme name
-        slides = []
-        for s in GALLERY_SLIDES:
-            slide = dict(s)
-            if slide["type"] == "title":
-                slide["title"] = f"Gallery: {theme_name}"
-            slides.append(slide)
+    output_path = os.path.join(output_dir, "gallery_all_intents.pptx")
+    prs, warnings = generate(GALLERY_SPEC)
+    prs.save(output_path)
 
-        spec = {
-            "metadata": {
-                "title": f"Gallery - {theme_name}",
-                "company": "Test Corp",
-                "confidentiality": "Internal",
-                "theme": theme_name,
-            },
-            "slides": slides,
-        }
-
-        prs = generate(spec)
-        output_path = os.path.join(output_dir, f"gallery_{theme_name}.pptx")
-        prs.save(output_path)
-        print(f"Generated: {output_path} ({len(slides)} slides)")
+    print(f"Gallery saved to: {output_path}")
+    print(f"  Slides: {len(prs.slides)}")
+    if warnings:
+        print(f"  Warnings: {len(warnings)}")
+        for w in warnings:
+            print(f"    {w}")
+    else:
+        print("  Warnings: none")
 
 
 if __name__ == "__main__":
-    generate_gallery()
+    main()

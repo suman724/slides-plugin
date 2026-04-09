@@ -1,0 +1,449 @@
+# Template Sources Manifest
+# Curated list of professional PPTX presentation templates from openly-licensed sources.
+# All URLs verified via web search on 2026-04-08.
+#
+# License notes:
+#   - SlidesCarnival: CC-BY 4.0 (free for any use, attribution required)
+#   - Slidesgo: Free tier (3/month), some require attribution
+#   - SlideEgg: Free tier with daily download limits
+#   - SlideHunter: Free for personal/educational use
+
+sources:
+
+  # ============================================================================
+  # PRIORITY 1 — SlidesCarnival (CC-BY 4.0)
+  # ============================================================================
+
+  # --- Corporate / Professional ---
+  - id: sc-salerio
+    url: "https://www.slidescarnival.com/template/salerio-free-presentation-template/1875"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["professional", "formal", "clean"]
+    description: "Professional business"
+
+  - id: sc-antonio
+    url: "https://www.slidescarnival.com/template/antonio-free-presentation-template/84"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["corporate", "simple", "versatile"]
+    description: "Simple corporate"
+
+  - id: sc-laertes
+    url: "https://www.slidescarnival.com/template/laertes-free-presentation-template/2038"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "dark"
+    tags: ["dark-grey", "red-accent", "elegant"]
+    description: "Premium business dark"
+
+  - id: sc-nerissa
+    url: "https://www.slidescarnival.com/template/nerissa-free-presentation-template/1402"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "formal"
+    tags: ["classic", "professional", "serif"]
+    description: "Classic professional"
+
+  - id: sc-aemelia
+    url: "https://www.slidescarnival.com/template/aemelia-free-presentation-template/825"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["blue", "corporate", "clean"]
+    description: "Blue corporate"
+
+  - id: sc-banquo
+    url: "https://www.slidescarnival.com/template/banquo-free-presentation-template/339"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["blue", "professional", "charts"]
+    description: "Blue professional"
+
+  - id: sc-rutland
+    url: "https://www.slidescarnival.com/template/rutland-free-presentation-template/10137"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["photo", "corporate", "rounded"]
+    description: "Photographic corporate"
+
+  - id: sc-nestor
+    url: "https://www.slidescarnival.com/template/nestor-free-presentation-template/1811"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "formal"
+    tags: ["blue", "formal", "business"]
+    description: "Blue formal business"
+
+  # --- Minimal / Dark ---
+  - id: sc-othello
+    url: "https://www.slidescarnival.com/othello-free-presentation-template/81"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "minimal"
+    tags: ["minimal", "formal", "clean"]
+    description: "Minimal formal"
+
+  - id: sc-eleanor
+    url: "https://www.slidescarnival.com/eleanor-free-presentation-template/308"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "minimal"
+    tags: ["minimal", "business", "white"]
+    description: "Minimal business"
+
+  - id: sc-dark-minimalist
+    url: "https://www.slidescarnival.com/template/dark-minimalist-slides/237927"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "dark"
+    tags: ["dark", "minimalist", "green"]
+    description: "Dark minimalist"
+
+  - id: sc-minimalist-business
+    url: "https://www.slidescarnival.com/template/minimalist-business-slides/146945"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "minimal"
+    tags: ["minimalist", "black", "blue"]
+    description: "Minimalist business"
+
+  - id: sc-minimalist-pitch-deck
+    url: "https://www.slidescarnival.com/template/minimalist-pitch-deck-2/237930"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "minimal"
+    tags: ["minimalist", "black", "beige"]
+    description: "Minimalist pitch deck"
+
+  # --- Pitch Deck / Consulting ---
+  - id: sc-consulting-pitch-deck
+    url: "https://www.slidescarnival.com/template/professional-consulting-pitch-deck/30754"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["consulting", "pitch", "multicolor"]
+    description: "Consulting pitch deck"
+
+  - id: sc-emilia
+    url: "https://www.slidescarnival.com/template/emilia-free-presentation-template/1577"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["pitch-deck", "yellow", "blue"]
+    description: "Stylish pitch deck"
+
+  # --- Annual Report / Strategy ---
+  - id: sc-business-annual-report
+    url: "https://www.slidescarnival.com/template/business-annual-report/152319"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "formal"
+    tags: ["annual-report", "black", "minimal"]
+    description: "Business annual report"
+
+  - id: sc-marketing-annual-report
+    url: "https://www.slidescarnival.com/template/marketing-annual-report/149910"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["marketing", "green", "report"]
+    description: "Marketing annual report"
+
+  - id: sc-annual-company-review
+    url: "https://www.slidescarnival.com/template/annual-review-company-slides/329418"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["annual-review", "company", "professional"]
+    description: "Annual company review"
+
+  # --- Consulting / Proposal ---
+  - id: sc-mckinsey-consulting
+    url: "https://www.slidescarnival.com/template/mckinsey-consulting-proposal-slides/215646"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "corporate"
+    tags: ["mckinsey", "consulting", "blue"]
+    description: "McKinsey consulting proposal"
+
+  - id: sc-simple-business-proposal
+    url: "https://www.slidescarnival.com/template/simple-business-proposal-slides/208909"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "minimal"
+    tags: ["proposal", "gray", "minimal"]
+    description: "Simple business proposal"
+
+  # --- Creative / Geometric ---
+  - id: sc-lodovico
+    url: "https://www.slidescarnival.com/lodovico-free-presentation-template/9808"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "creative"
+    tags: ["geometric", "business", "modern"]
+    description: "Business geometric"
+
+  - id: sc-clean-minimal
+    url: "https://www.slidescarnival.com/template/clean-minimal/44606"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "minimal"
+    tags: ["clean", "geometric", "cream"]
+    description: "Clean minimal"
+
+  - id: sc-graphic-design-modern
+    url: "https://www.slidescarnival.com/template/graphic-design-modern-professional-slides/240190"
+    license: "CC-BY-4.0"
+    attribution: "SlidesCarnival"
+    category: "dark"
+    tags: ["gradient", "modern", "black"]
+    description: "Modern gradient professional"
+
+  # ============================================================================
+  # PRIORITY 2 — Slidesgo
+  # ============================================================================
+
+  - id: sg-simple-business
+    url: "https://slidesgo.com/theme/simple-business"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "minimal"
+    tags: ["simple", "business", "clean"]
+    description: "Simple business"
+
+  - id: sg-modern-business
+    url: "https://slidesgo.com/theme/modern-business"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "corporate"
+    tags: ["modern", "business", "professional"]
+    description: "Modern business"
+
+  - id: sg-business-annual-report
+    url: "https://slidesgo.com/theme/business-annual-report"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "formal"
+    tags: ["annual-report", "business", "data"]
+    description: "Business annual report"
+
+  - id: sg-annual-report
+    url: "https://slidesgo.com/theme/annual-report"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "formal"
+    tags: ["annual-report", "gray", "minimal"]
+    description: "Annual report minimal"
+
+  - id: sg-annual-review-pitch-deck
+    url: "https://slidesgo.com/theme/annual-review-pitch-deck"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "corporate"
+    tags: ["annual-review", "pitch", "elegant"]
+    description: "Annual review pitch deck"
+
+  - id: sg-minimalist-business-slides
+    url: "https://slidesgo.com/theme/minimalist-business-slides"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "minimal"
+    tags: ["minimalist", "elegant", "modern"]
+    description: "Minimalist business slides"
+
+  - id: sg-business-pitch-deck
+    url: "https://slidesgo.com/theme/business-pitch-deck"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "corporate"
+    tags: ["pitch-deck", "business", "professional"]
+    description: "Business pitch deck"
+
+  - id: sg-elegant-formal-business
+    url: "https://slidesgo.com/theme/elegant-formal-business-model"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "formal"
+    tags: ["elegant", "formal", "blue-green"]
+    description: "Elegant formal business"
+
+  - id: sg-dark-modern-business
+    url: "https://slidesgo.com/theme/dark-modern-business-basic-template"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "dark"
+    tags: ["dark", "modern", "geometric"]
+    description: "Dark modern business"
+
+  - id: sg-corporate-strategy-consulting
+    url: "https://slidesgo.com/theme/corporate-strategy-consulting"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "corporate"
+    tags: ["strategy", "consulting", "corporate"]
+    description: "Corporate strategy consulting"
+
+  - id: sg-management-consulting
+    url: "https://slidesgo.com/theme/management-consulting"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "formal"
+    tags: ["consulting", "management", "gray"]
+    description: "Management consulting"
+
+  - id: sg-technology-consulting
+    url: "https://slidesgo.com/theme/technology-consulting"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "minimal"
+    tags: ["technology", "consulting", "minimalist"]
+    description: "Technology consulting"
+
+  - id: sg-professional-company-report
+    url: "https://slidesgo.com/theme/professional-company-report"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "formal"
+    tags: ["company", "report", "professional"]
+    description: "Professional company report"
+
+  - id: sg-elegant-workplan
+    url: "https://slidesgo.com/theme/elegant-workplan"
+    license: "Slidesgo-Free"
+    attribution: "Slidesgo"
+    category: "corporate"
+    tags: ["workplan", "elegant", "structured"]
+    description: "Elegant workplan"
+
+  # ============================================================================
+  # PRIORITY 3 — SlideEgg
+  # ============================================================================
+
+  - id: se-corporate-presentation
+    url: "https://www.slideegg.com/corporate-powerpoint-templates-2811"
+    license: "SlideEgg-Free"
+    attribution: "SlideEgg"
+    category: "corporate"
+    tags: ["corporate", "professional", "blue-yellow"]
+    description: "Corporate professional"
+
+  - id: se-company-profile
+    url: "https://www.slideegg.com/company-presentation-503"
+    license: "SlideEgg-Free"
+    attribution: "SlideEgg"
+    category: "corporate"
+    tags: ["company", "profile", "clean"]
+    description: "Company profile"
+
+  - id: se-company-powerpoint
+    url: "https://www.slideegg.com/company-powerpoint-template-1"
+    license: "SlideEgg-Free"
+    attribution: "SlideEgg"
+    category: "corporate"
+    tags: ["company", "professional", "versatile"]
+    description: "Company template"
+
+  - id: se-blue-template
+    url: "https://www.slideegg.com/free-blue-template"
+    license: "SlideEgg-Free"
+    attribution: "SlideEgg"
+    category: "corporate"
+    tags: ["blue", "modern", "clean"]
+    description: "Blue modern template"
+
+  - id: se-modern-template
+    url: "https://www.slideegg.com/modern-template-ppt"
+    license: "SlideEgg-Free"
+    attribution: "SlideEgg"
+    category: "corporate"
+    tags: ["modern", "blue-white", "abstract"]
+    description: "Modern corporate"
+
+  - id: se-corporate-strategy
+    url: "https://www.slideegg.com/corporate-strategy-powerpoint-template-20"
+    license: "SlideEgg-Free"
+    attribution: "SlideEgg"
+    category: "corporate"
+    tags: ["strategy", "orange", "corporate"]
+    description: "Corporate strategy orange"
+
+  - id: se-business-deck
+    url: "https://www.slideegg.com/business-deck"
+    license: "SlideEgg-Free"
+    attribution: "SlideEgg"
+    category: "corporate"
+    tags: ["business", "deck", "professional"]
+    description: "Business deck"
+
+  # ============================================================================
+  # PRIORITY 4 — SlideHunter
+  # ============================================================================
+
+  - id: sh-corporate-executive
+    url: "https://slidehunter.com/powerpoint-templates/corporate-executive-powerpoint-template/"
+    license: "SlideHunter-Free"
+    attribution: "SlideHunter"
+    category: "corporate"
+    tags: ["executive", "blue", "silhouette"]
+    description: "Corporate executive"
+
+  - id: sh-corporate-identity
+    url: "https://slidehunter.com/powerpoint-templates/corporate-identity-powerpoint-template/"
+    license: "SlideHunter-Free"
+    attribution: "SlideHunter"
+    category: "corporate"
+    tags: ["identity", "red", "skyscraper"]
+    description: "Corporate identity red"
+
+  - id: sh-dark-professional
+    url: "https://slidehunter.com/powerpoint-templates/dark-professional-powerpoint-template-for-business/"
+    license: "SlideHunter-Free"
+    attribution: "SlideHunter"
+    category: "dark"
+    tags: ["dark", "metal", "professional"]
+    description: "Dark professional"
+
+  - id: sh-corporate-business-16-9
+    url: "https://slidehunter.com/powerpoint-templates/corporate-business-powerpoint-template-16-9/"
+    license: "SlideHunter-Free"
+    attribution: "SlideHunter"
+    category: "corporate"
+    tags: ["widescreen", "green", "worldmap"]
+    description: "Corporate business widescreen"
+
+  - id: sh-corporate-green
+    url: "https://slidehunter.com/powerpoint-templates/corporate-powerpoint-template-green/"
+    license: "SlideHunter-Free"
+    attribution: "SlideHunter"
+    category: "corporate"
+    tags: ["green", "corporate", "clean"]
+    description: "Green corporate"
+
+  - id: sh-corporate-gray
+    url: "https://slidehunter.com/powerpoint-templates/corporate-powerpoint-template-gray/"
+    license: "SlideHunter-Free"
+    attribution: "SlideHunter"
+    category: "formal"
+    tags: ["gray", "elegant", "corporate"]
+    description: "Gray corporate elegant"
+
+  - id: sh-strategy-map
+    url: "https://slidehunter.com/powerpoint-templates/strategy-map-powerpoint-template/"
+    license: "SlideHunter-Free"
+    attribution: "SlideHunter"
+    category: "corporate"
+    tags: ["strategy", "diagram", "business"]
+    description: "Strategy map"
+
+  - id: sh-dashboard
+    url: "https://slidehunter.com/powerpoint-templates/dashboard-powerpoint-template/"
+    license: "SlideHunter-Free"
+    attribution: "SlideHunter"
+    category: "corporate"
+    tags: ["dashboard", "data", "modern"]
+    description: "Dashboard template"

@@ -6,7 +6,7 @@
 The user provides just a topic (e.g., `/slides quarterly review`).
 
 - Generate a complete 10-12 slide deck with plausible structure
-- Follow the standard consulting deck template: Title -> Agenda -> Sections -> Summary -> Closing
+- Follow the standard deck pattern: `open` -> `outline` -> sections with `divide` -> `summarize` -> `close`
 - Use realistic but clearly synthetic data where needed
 - Structure: 3-4 sections with 2-3 content slides each
 
@@ -22,52 +22,67 @@ The user provides topic + some data (e.g., `/slides quarterly review: revenue $1
 The user provides a full outline or pastes a document.
 
 - Structure the content into slides faithfully
-- Focus on layout selection and visual hierarchy
-- Add agenda/closing if missing
+- Focus on intent selection and content organization
+- Add `open`/`close` if missing
 - Generate as many slides as content warrants
 
 ## Content Quality Rules
 
-1. **Every slide needs a clear title** - descriptive, not generic ("Revenue Growth Drivers" not "Slide 5")
-2. **5-7 bullets max per slide** - if you have more, split across slides
-3. **Be specific** - use numbers, dates, and names instead of vague statements
-4. **Parallel structure** - all bullets at the same level should follow the same grammatical pattern
-5. **Action-oriented** - prefer "Revenue grew 18% to $142M" over "Revenue was $142M"
-6. **No walls of text** - slides are visual aids, not documents
+1. **Every slide needs a clear title** -- descriptive, not generic ("Revenue Growth Drivers" not "Slide 5")
+2. **5-7 bullets max per slide** -- if you have more, split across slides
+3. **Be specific** -- use numbers, dates, and names instead of vague statements
+4. **Parallel structure** -- all bullets at the same level should follow the same grammatical pattern
+5. **Action-oriented** -- prefer "Revenue grew 18% to $142M" over "Revenue was $142M"
+6. **No walls of text** -- slides are visual aids, not documents
+
+## Intent Selection by Content Type
+
+| Content | Intent | Why |
+|---|---|---|
+| Opening | `open` | Structural necessity |
+| Agenda / TOC | `outline` | Numbered items with optional detail |
+| Section break | `divide` | Navigation between major sections |
+| Bullet points | `explain` | The workhorse for narrative content |
+| Two-sided comparison | `compare` | Side-by-side with headings |
+| Three+ categories | `categorize` | Multi-column comparison |
+| Trends over time | `visualize` (line) | Time-series data |
+| Category comparison | `visualize` (column) | Discrete category data |
+| Composition/share | `visualize` (pie) | Part-of-whole data |
+| Exact values table | `tabulate` | When readers need specific numbers |
+| 3-4 headline metrics | `measure` | KPI dashboard cards |
+| Options with pros/cons | `evaluate` | Decision support |
+| Project timeline | `sequence` | Milestones on a roadmap |
+| Single standout stat | `emphasize` (number) | Maximum impact for one number |
+| Notable quote | `emphasize` (quote) | Executive or thought leader quote |
+| Image + commentary | `illustrate` | Visual evidence + text |
+| Key findings | `summarize` | Numbered takeaways + call to action |
+| Ending | `close` | Thank you + contact |
 
 ## Deck Structure Patterns
 
 ### Executive Review (10-15 slides)
-Title -> Agenda -> Section: Performance (KPIs, charts) -> Section: Analysis (content, comparison) -> Section: Outlook (timeline, takeaway) -> Closing
+`open` -> `outline` -> `divide` + `measure` + `visualize` (performance) -> `divide` + `explain` + `compare` (analysis) -> `divide` + `sequence` + `summarize` (outlook) -> `close`
 
 ### Project Update (8-12 slides)
-Title -> Agenda -> Status Overview (key_metrics) -> Progress Detail (content slides) -> Risks/Issues (two_column) -> Next Steps (takeaway) -> Closing
+`open` -> `outline` -> `measure` (status) -> `explain` (progress) -> `compare` (risks vs. mitigations) -> `summarize` (next steps) -> `close`
 
 ### Strategy Presentation (12-18 slides)
-Title -> Agenda -> Market Context (content, big_number) -> Current State (charts, tables) -> Strategic Options (comparison) -> Recommendation (takeaway) -> Implementation (timeline) -> Closing
+`open` -> `outline` -> `emphasize` (market size) -> `explain` + `visualize` (current state) -> `evaluate` (strategic options) -> `summarize` (recommendation) -> `sequence` (roadmap) -> `close`
 
 ### Product Launch (8-12 slides)
-Title -> Problem Statement (big_number or quote) -> Solution (content, image_with_text) -> Key Features (three_column) -> Market Opportunity (chart) -> Go-to-Market (timeline) -> Ask (takeaway) -> Closing
+`open` -> `emphasize` (problem statement) -> `explain` (solution) -> `categorize` (key features) -> `visualize` (market opportunity) -> `sequence` (go-to-market) -> `summarize` (ask) -> `close`
 
-## Layout Selection Guide
+### Research Report (10-14 slides)
+`open` -> `outline` -> `explain` (methodology) -> `visualize` + `tabulate` (findings) -> `emphasize` (key insight) -> `illustrate` (evidence) -> `summarize` (recommendations) -> `close`
 
-| Content Type | Recommended Layout |
-|---|---|
-| Opening | `title` |
-| Table of contents | `agenda` |
-| Section break | `section_divider` |
-| Bullet points | `content` |
-| Side-by-side info | `two_column` |
-| Three categories | `three_column` |
-| Trends over time | `chart` (line) |
-| Category comparison | `chart` (column) |
-| Composition/share | `chart` (pie/doughnut) |
-| Detailed data | `table` |
-| 3-4 KPIs | `key_metrics` |
-| Options evaluation | `comparison` |
-| Project plan | `timeline` |
-| Summary | `takeaway` |
-| Impactful stat | `big_number` |
-| Notable quote | `quote` |
-| Visual + text | `image_with_text` |
-| End | `closing` |
+## Overflow Handling
+
+The engine handles content overflow automatically, but better content = fewer adjustments:
+- **Bullets > 8**: Engine reduces spacing/font first, then splits across slides. Prefer splitting in the spec.
+- **Titles > 60 chars**: Engine reduces font size first (down to 20pt), truncates as last resort. Keep titles concise.
+- **Metrics > 4**: 5-6 use a 2-row grid. 7+ split across slides. Group related KPIs together.
+- **Table rows > 12**: Engine splits, repeating headers. Consider summarizing data instead.
+- **Table columns > 7**: Engine reduces cell font to 8pt. Consider transposing if row count is low.
+- **Timeline > 6**: Engine compresses labels. 11+ splits into 2 slides. Show only key milestones.
+- **Chart > 12 categories**: Engine switches column to bar chart or truncates. Aggregate where possible.
+- **Evaluate > 3 options**: 3 uses 3-column, 4+ splits into paired slides. Keep to 2-3 options per slide.

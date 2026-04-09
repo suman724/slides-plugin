@@ -52,13 +52,15 @@ User invokes /slides <topic or context>
         |
         v
   generate_pptx.py:
-    1. style_resolver.py  --> resolves palette + typography from library
-    2. intent_mapper.py   --> maps each intent to a layout pattern
-    3. layout_engine.py   --> renders content into positioned shapes
-    4. shape_renderer.py  --> low-level PPTX shape creation
+    1. style_resolver.py    --> resolves palette + typography from library
+    2. intent_mapper.py     --> maps each intent to a layout pattern
+    3. overflow.py          --> PREVENT: adjust content/fonts/spacing pre-render
+    4. layout_engine.py     --> renders content into positioned shapes
+       shape_renderer.py    --> low-level PPTX shape creation
+    5. layout_validator.py  --> VERIFY + FIX: audit output, corrective passes
         |
         v
-  User gets professional presentation file
+  User gets professional presentation file + any warnings
 ```
 
 ### Core Principle: Separation of Concerns
@@ -96,21 +98,25 @@ slides-plugin/
 │       │   ├── style-guide.md              # Available palettes and moods
 │       │   └── content-guidelines.md        # Deck patterns + content rules
 │       └── scripts/
-│           ├── generate_pptx.py             # Entry point: validate -> resolve -> map -> render
+│           ├── generate_pptx.py             # Entry point: validate -> resolve -> map -> prevent -> render -> verify
 │           ├── style_resolver.py            # Resolves style preferences from library
 │           ├── intent_mapper.py             # Maps semantic intents to layout patterns
-│           ├── layout_engine.py             # Generic renderer: zones + content -> shapes
+│           ├── overflow.py                  # Layer 1: pre-render content/font/spacing adjustments
+│           ├── layout_engine.py             # Layer 2: generic zone-based renderer
 │           ├── shape_renderer.py            # Low-level shape/text/chart/table rendering
+│           ├── layout_validator.py          # Layer 3: post-render audit + corrective fixes
 │           └── style_library.json           # Build artifact from pipeline
 │
 ├── tests/
-│   ├── test_generate_pptx.py
-│   ├── test_style_resolver.py
-│   ├── test_intent_mapper.py
-│   ├── test_layout_engine.py
-│   ├── test_pipeline.py
-│   ├── generate_gallery.py
-│   └── sample_spec.json
+│   ├── test_generate_pptx.py               # End-to-end generation tests
+│   ├── test_style_resolver.py              # Palette/typography resolution
+│   ├── test_intent_mapper.py               # Intent-to-layout mapping
+│   ├── test_overflow.py                    # Layer 1: overflow prevention
+│   ├── test_layout_validator.py            # Layer 3: post-render validation
+│   ├── test_edge_cases.py                  # Layer 4: edge-case suite (12 bullets, wide tables, etc.)
+│   ├── test_pipeline.py                    # Extraction/aggregation pipeline
+│   ├── generate_gallery.py                 # Visual test gallery generator
+│   └── sample_spec_v2.json                 # Semantic model sample spec
 │
 ├── requirements.txt                         # Runtime: python-pptx
 ├── DESIGN.md                                # This file
@@ -813,25 +819,253 @@ Same three levels as before, but Claude now thinks in semantic intents:
 
 ---
 
+## Quality Assurance: Three-Layer Safety System
+
+The rendering pipeline uses three layers to ensure every generated PPTX is free of formatting defects. No single layer is sufficient alone -- content variety, discovered pattern variation, and style library changes make it impossible to prevent all issues statically.
+
+### Architecture
+
+```
+Semantic spec
+    |
+    v
+Layer 1: overflow.py      PREVENT -- adjust content/fonts/spacing before rendering
+    |
+    v
+Layer 2: layout_engine.py RENDER -- place shapes using adjusted parameters
+    |
+    v
+Layer 3: layout_validator.py  VERIFY + FIX -- audit output, apply corrective passes
+    |
+    v
+PPTX file + warnings list
+```
+
+### Layer 1: Overflow Prevention (`overflow.py`)
+
+Runs **before** rendering. Analyzes the semantic spec against the resolved layout pattern's zone sizes and applies preventive adjustments.
+
+#### Global Constants
+
+```python
+# Font size floors (points) -- never go below these
+MIN_BODY_PT = 10
+MIN_SUBBULLET_PT = 9
+MIN_HEADING_PT = 14
+MIN_TITLE_PT = 20
+MIN_CAPTION_PT = 8
+MIN_METRIC_VALUE_PT = 24
+MIN_TABLE_CELL_PT = 8
+
+# Content quantity limits
+MAX_BULLETS_PER_SLIDE = 8        # prefer splitting above this
+HARD_MAX_BULLETS = 12            # absolute max after all reductions
+MAX_BULLETS_PER_COLUMN = 6      # for 2-col / 3-col layouts
+MAX_METRICS_PER_SLIDE = 4       # single row; 5-6 use 2-row grid; 7+ split
+MAX_TIMELINE_MILESTONES = 6     # single row; 7-10 use alternating labels; 11+ split
+MAX_AGENDA_ITEMS = 7            # after this, compress or go 2-column
+MAX_TABLE_COLUMNS = 7           # comfortable; up to 11 at min font
+MAX_TABLE_ROWS = 12             # comfortable; up to 16 at min font
+MAX_CHART_CATEGORIES = 12       # column/line; bar charts tolerate 15
+MAX_TITLE_CHARS = 60            # single line at 28pt
+```
+
+#### Strategy Priority (applied in order)
+
+| # | Strategy | Visual Impact | When Used |
+|---|---|---|---|
+| 1 | Spacing reduction | Minimal | First attempt -- reduce paragraph spacing, margins |
+| 2 | Font reduction | Moderate | Shrink fonts to floor values |
+| 3 | Layout upgrade | Moderate | Switch to layout that fits more (row -> grid, 2-col -> 3-col) |
+| 4 | Content splitting | High | Break into multiple slides with "(1 of N)" suffix |
+| 5 | Truncation | High | Last resort with "..." -- only for titles, never for data |
+
+#### Rules by Scenario
+
+| Scenario | Detection | Primary | Fallback |
+|---|---|---|---|
+| **Too many bullets** | Items > 8 in zone | Reduce spacing (gains ~25%), then font to 10pt | Split slides at level-0 boundaries |
+| **Title too long** | > 60 chars at 28pt | Reduce font by 2pt steps to 20pt (fits ~78 chars) | Truncate with "..." at 2-line max |
+| **Bullet text too long** | Single bullet > 140 chars | Reduce font to 12pt then 10pt | Truncate at 3 lines with "..." |
+| **Too many metrics** | 5-6 KPIs | 2-row grid layout (card height 1.50", value font 30pt) | 7+: split into slides of 4 |
+| **Table too wide** | Columns > 7 | Reduce cell font to 8pt, margins to 0.04" (fits 11 cols) | Transpose if beneficial, else column-group split |
+| **Table too tall** | Rows > 12 | Reduce font/margins (fits 16 rows) | Row-group split, repeat header row |
+| **Chart too many categories** | > 12 (column/line) | Switch to bar chart, rotate labels 45deg, font 7pt | Pie: group into "Other". Else: split to 2 charts |
+| **Too many milestones** | > 6 on timeline | Compress labels + alternate above/below (fits 10) | Split to 2 timeline slides |
+| **Image aspect mismatch** | Ratio differs > 30% | Aspect-preserving fit with centering (letterbox) | Rebalance column split (60/40) |
+| **3+ compare options** | Options > 2 | 3 options: 3-column layout. 4: 2x2 grid | 5+: split into paired slides of 2 |
+| **Too many agenda items** | Items > 7 | Reduce item height (drop subtext at 9-10) | 2-column agenda (fits 16 items) |
+
+#### API
+
+```python
+@dataclass
+class OverflowResult:
+    adjusted_spec: dict          # Modified slide spec
+    font_overrides: dict         # e.g., {"body": 12, "heading": 16}
+    spacing_overrides: dict      # e.g., {"bullet_space_after": 3}
+    layout_upgrade: str | None   # New layout pattern ID, or None
+    warnings: list[str]          # Logged overflow adjustments
+    extra_slides: list[dict]     # Additional slides from content splitting
+
+def apply_overflow_rules(slide_spec, layout_pattern, resolved_style):
+    """Analyze content against zone capacity, return adjustments."""
+```
+
+### Layer 2: Layout Engine (rendering)
+
+The existing `layout_engine.py` and `shape_renderer.py`. Renders shapes using the adjusted parameters from Layer 1. Also applies zone bounds clamping:
+- Content zones expand to fill available space above the footer
+- Minimum content width enforcement (85% of slide for wide intents)
+- Footer zone reserved at fixed 0.65" from bottom
+- All shapes clamped to slide boundaries
+
+### Layer 3: Layout Validator (`layout_validator.py`)
+
+Runs **after** rendering. Audits every shape on every slide for formatting defects, then applies corrective passes if issues are found.
+
+#### What it checks (per shape)
+
+| Check | Condition | Severity |
+|---|---|---|
+| **Past right edge** | `shape.right > slide_width + tolerance` | Error |
+| **Past bottom edge** | `shape.bottom > slide_height + tolerance` | Error |
+| **Above top edge** | `shape.top < -tolerance` | Error |
+| **Before left edge** | `shape.left < -tolerance` | Error |
+| **Text overflow** | Estimated text height > shape height * 1.5 | Warning |
+| **Shape too small** | Width < 0.1" and height < 0.1" with text | Warning |
+
+#### What it checks (cross-shape)
+
+| Check | Condition | Severity |
+|---|---|---|
+| **Text overlap** | Two text shapes overlap by > 0.3" horizontal AND > 0.2" vertical | Error |
+| **Content in footer zone** | Text shape bottom > footer_top | Warning |
+
+#### Corrective pass (max 2 iterations)
+
+When the validator finds issues, it applies mechanical fixes directly to the placed shapes:
+
+```
+validate → issues found?
+              |
+         no: done
+         yes: apply fixes → re-validate (pass 2)
+                                |
+                           no issues: done
+                           still issues: save PPTX + warnings
+```
+
+**Fix strategies by issue type:**
+
+| Issue | Fix |
+|---|---|
+| Shape past right edge | Reduce width: `shape.width = slide_width - shape.left - margin` |
+| Shape past bottom | Reduce height: `shape.height = max_bottom - shape.top` |
+| Text overlap (vertical) | Shrink the lower shape's top to start after the upper shape's bottom + 0.05" gap |
+| Text overflow | Reduce font size by 2pt (down to floor), re-check |
+| Content in footer zone | Reduce shape height to end above footer |
+
+**What it does NOT fix** (requires upstream changes):
+- Content that fundamentally doesn't fit even at minimum font sizes
+- Structural layout problems (wrong pattern for the content type)
+- Missing content (empty zones)
+
+These are logged as unresolvable warnings. They indicate a gap in the overflow module that should be fixed in code.
+
+#### API
+
+```python
+@dataclass
+class ValidationIssue:
+    slide_index: int
+    shape_index: int
+    issue_type: str              # "overlap", "past_right", "past_bottom", "text_overflow", etc.
+    severity: str                # "error" or "warning"
+    description: str
+    auto_fixed: bool             # True if corrective pass resolved it
+
+def validate_presentation(prs) -> list[ValidationIssue]:
+    """Audit all slides for formatting defects."""
+
+def validate_and_fix(prs, max_passes=2) -> tuple[Presentation, list[ValidationIssue]]:
+    """Validate and apply corrective passes. Returns fixed presentation + remaining issues."""
+```
+
+### Layer 4: Edge-Case Test Suite
+
+Automated tests that exercise the safety system with deliberately tricky content. These run as part of the test suite (`pytest`) and ensure the three layers work together.
+
+#### Test cases
+
+| Test | Content | What it Verifies |
+|---|---|---|
+| `test_12_bullets` | Explain slide with 12 bullet points | Overflow splits or compresses; validator finds 0 issues |
+| `test_long_title` | 120-character title | Overflow reduces font or truncates; no right-edge overflow |
+| `test_8_metrics` | Measure slide with 8 KPIs | Overflow splits into 2 slides of 4 |
+| `test_wide_table` | Table with 10 columns | Overflow reduces font; table fits in zone |
+| `test_tall_table` | Table with 20 rows | Overflow splits into 2 table slides |
+| `test_20_chart_categories` | Chart with 20 x-axis labels | Overflow switches to bar or rotates labels |
+| `test_10_milestones` | Timeline with 10 steps | Overflow alternates labels or splits |
+| `test_3_compare_options` | Compare with 3 sides | Overflow upgrades to 3-column |
+| `test_5_evaluate_options` | Evaluate with 5 options | Overflow splits into paired slides |
+| `test_12_agenda_items` | Outline with 12 items | Overflow compresses or goes 2-column |
+| `test_all_intents` | One slide per intent with moderate content | Validator finds 0 issues on all 15 |
+| `test_all_intents_heavy` | One slide per intent with maximum content | Overflow adjusts; validator finds 0 issues after fixes |
+| `test_empty_content` | Slides with minimal/empty fields | No crashes, reasonable output |
+| `test_unicode_content` | Titles and bullets with CJK, emoji, accents | No rendering errors |
+
+#### Test assertion
+
+Every test calls `validate_and_fix()` and asserts:
+```python
+prs, issues = validate_and_fix(prs)
+unresolved = [i for i in issues if not i.auto_fixed]
+assert len(unresolved) == 0, f"Unresolved issues: {unresolved}"
+```
+
+If an unresolved issue appears, it means the overflow module + validator can't handle this case -- the test failure drives a code fix.
+
+### Logging Contract
+
+Every adjustment across all three layers is logged with consistent severity:
+
+| Prefix | Meaning | Example |
+|---|---|---|
+| `INFO` | Preventive adjustment made | `"INFO: Reduced body font to 12pt on slide 4 (8 bullets)"` |
+| `WARNING` | Corrective fix applied post-render | `"WARNING: Fixed overlap on slide 9 by shrinking shape height"` |
+| `ERROR` | Unresolvable issue -- shipped with defect | `"ERROR: Slide 7 content exceeds zone at minimum font size"` |
+
+The generation pipeline collects all logs and reports them to the user after saving the PPTX.
+
+---
+
 ## Implementation Phases
 
-### Phase 1: Preprocessing Pipeline
-Build `pipeline/` -- manifest, download, extract, aggregate. Start with 10 SlidesCarnival files (clearest licensing). Output first `style_library.json`.
+### Phase 1: Preprocessing Pipeline -- DONE
+Built `pipeline/` -- manifest (52 sources), download, extract (with theme font resolution, improved purpose classification, column detection), aggregate. Produced `style_library.json` from 33 PPTX files.
 
-### Phase 2: Style Resolver
-Implement `style_resolver.py` -- loads library, resolves palette/typography by ID or mood. Replaces hardcoded `design_system.py`.
+### Phase 2: Style Resolver -- DONE
+Implemented `style_resolver.py` -- loads library, resolves palette/typography by ID or mood, caps font sizes to sensible ranges, safe font fallbacks.
 
-### Phase 3: Semantic Content Model + Intent Mapper
-Define new JSON schema. Implement `intent_mapper.py`. Write reference docs. Update `sample_spec.json`.
+### Phase 3: Semantic Content Model + Intent Mapper -- PARTIALLY DONE
+Implemented `intent_mapper.py` with 15 intents, structural fallbacks, content-adaptive overrides, zone width enforcement. Created `sample_spec_v2.json`. **Remaining:** reference docs (semantic-content-model.md, intent-reference.md, style-guide.md), update content-guidelines.md.
 
-### Phase 4: Layout Engine + Shape Renderer
-Build generic `layout_engine.py` (single renderer for all layouts). Refactor current rendering code into `shape_renderer.py`.
+### Phase 4: Layout Engine + Shape Renderer -- DONE
+Built generic `layout_engine.py` (zone-based rendering with height/width expansion, footer clamping). Built `shape_renderer.py` (all rendering functions consolidated).
 
-### Phase 5: SKILL.md + Reference Docs
-Rewrite skill definition for semantic model. Update all reference docs.
+### Phase 5: Quality Assurance Layers
+Build the three-layer safety system:
+- `overflow.py` -- Layer 1: pre-render content/font/spacing adjustments
+- `layout_validator.py` -- Layer 3: post-render audit + corrective fixes
+- `test_edge_cases.py` -- Layer 4: edge-case test suite
+- Wire into `generate_pptx.py` pipeline
 
-### Phase 6: Testing + Gallery + Polish
-Update tests, generate gallery with multiple palettes, visual QA, cleanup.
+### Phase 6: SKILL.md + Reference Docs
+Rewrite skill definition for v2 semantic model. Write all 4 reference docs.
+
+### Phase 7: Testing + Gallery + Polish
+Full test suite (unit + integration + edge cases), gallery generation across palettes, visual QA, cleanup.
 
 ---
 
@@ -849,3 +1083,5 @@ Update tests, generate gallery with multiple palettes, visual QA, cleanup.
 | Pipeline discovers too few useful patterns | 4 structural fallbacks guarantee plugin works; fallbacks use sensible defaults |
 | Pipeline discovers unexpected/odd patterns | Confidence score + source_count filtering; low-confidence clusters excluded |
 | Discovered patterns override a good fallback poorly | Manual curation step; can pin specific intents to fallbacks in config |
+| Validator can't fix all rendering defects | Max 2 corrective passes; unresolvable issues logged as ERROR with description; drives code fixes in overflow module |
+| New content patterns bypass overflow rules | Edge-case test suite catches regressions; new test added for each discovered gap |

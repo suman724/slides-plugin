@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "title": "Q3 2026 Strategic Review",
+    "subtitle": "Board of Directors Presentation",
+    "author": "Strategy Team",
+    "company": "Acme Corp",
+    "date": "April 2026",
+    "confidentiality": "Confidential"
+  },
+  "slides": [
+    {
+      "intent": "open",
+      "title": "Q3 2026 Strategic Review",
+      "subtitle": "Prepared for the Board of Directors"
+    },
+    {
+      "intent": "outline",
+      "title": "Agenda",
+      "items": [
+        {"text": "Market Overview", "detail": "Industry trends and competitive landscape"},
+        {"text": "Financial Performance", "detail": "Revenue, margins, and key metrics"},
+        {"text": "Strategic Initiatives", "detail": "Progress on key workstreams"},
+        {"text": "Outlook & Recommendations", "detail": "Next steps and decision points"}
+      ]
+    },
+    {
+      "intent": "divide",
+      "title": "Market Overview",
+      "subtitle": "Industry trends and competitive landscape",
+      "section_number": 1
+    },
+    {
+      "intent": "explain",
+      "title": "Key Market Trends",
+      "points": [
+        {"text": "Total addressable market grew 12% YoY to $4.2B", "subpoints": [
+          "Enterprise segment accounts for 65% of growth",
+          "SMB segment showing early signs of recovery"
+        ]},
+        {"text": "Competitor X launched adjacent product in Q2"},
+        {"text": "Regulatory changes expected in H2 2026", "subpoints": [
+          "New compliance framework will require certification"
+        ]}
+      ]
+    },
+    {
+      "intent": "compare",
+      "title": "Revenue vs. Plan",
+      "sides": [
+        {
+          "heading": "Performance",
+          "points": [
+            "Revenue: $142M (+18% YoY)",
+            "Gross margin: 72% (target: 70%)",
+            "Operating margin: 22%",
+            "Free cash flow: $28M"
+          ]
+        },
+        {
+          "heading": "Commentary",
+          "points": [
+            "Enterprise deal pipeline strong",
+            "3 deals >$1M in pipeline",
+            "SMB churn elevated at 4.2%",
+            "Product-led growth showing results"
+          ]
+        }
+      ]
+    },
+    {
+      "intent": "visualize",
+      "title": "Revenue by Quarter",
+      "chart": {
+        "type": "column_clustered",
+        "categories": ["Q1 '25", "Q2 '25", "Q3 '25", "Q4 '25", "Q1 '26", "Q2 '26", "Q3 '26"],
+        "series": [
+          {"name": "Revenue ($M)", "values": [98, 105, 112, 120, 128, 135, 142]},
+          {"name": "Target ($M)", "values": [100, 108, 115, 122, 130, 138, 145]}
+        ]
+      },
+      "note": "Q3 revenue within 2% of target despite macro headwinds"
+    },
+    {
+      "intent": "measure",
+      "title": "Key Performance Indicators",
+      "metrics": [
+        {"label": "ARR", "value": "$568M", "change": "+18%", "trend": "up"},
+        {"label": "NRR", "value": "118%", "change": "+3pp", "trend": "up"},
+        {"label": "CAC Payback", "value": "14mo", "change": "-2mo", "trend": "up"},
+        {"label": "Churn", "value": "4.2%", "change": "+0.8pp", "trend": "down"}
+      ]
+    },
+    {
+      "intent": "tabulate",
+      "title": "P&L Summary ($M)",
+      "columns": ["Metric", "Q3 Actual", "Q3 Plan", "Variance", "YoY Growth"],
+      "rows": [
+        ["Revenue", "142", "145", "-2%", "+18%"],
+        ["Gross Profit", "102", "102", "0%", "+20%"],
+        ["EBITDA", "38", "40", "-5%", "+25%"],
+        ["Net Income", "22", "24", "-8%", "+30%"]
+      ],
+      "highlight_rules": [
+        {"column": 3, "condition": "negative", "color": "red"},
+        {"column": 4, "condition": "positive", "color": "green"}
+      ]
+    },
+    {
+      "intent": "evaluate",
+      "title": "Strategic Options",
+      "options": [
+        {
+          "heading": "Option A: Organic Growth",
+          "advantages": ["Lower execution risk", "Preserves cash reserves", "Maintains team focus"],
+          "challenges": ["Slower market capture", "Competitor advantage widens"]
+        },
+        {
+          "heading": "Option B: Acquisition",
+          "advantages": ["Immediate market share", "Technology synergies", "Talent acquisition"],
+          "challenges": ["Integration risk", "$200M capital requirement", "Cultural alignment"]
+        }
+      ]
+    },
+    {
+      "intent": "sequence",
+      "title": "Implementation Roadmap",
+      "steps": [
+        {"when": "Q4 2026", "what": "Board Approval", "detail": "Final decision on strategic direction"},
+        {"when": "Q1 2027", "what": "Execution Begins", "detail": "Resource allocation and team formation"},
+        {"when": "Q2 2027", "what": "Phase 1 Complete", "detail": "Initial integration or organic milestone"},
+        {"when": "Q4 2027", "what": "Value Realization", "detail": "Expected synergy capture begins"}
+      ]
+    },
+    {
+      "intent": "emphasize",
+      "title": "Market Opportunity",
+      "emphasis": {
+        "type": "number",
+        "value": "$4.2B",
+        "label": "Total Addressable Market",
+        "context": "Growing at 12% annually with enterprise segment driving 65% of new demand"
+      }
+    },
+    {
+      "intent": "emphasize",
+      "emphasis": {
+        "type": "quote",
+        "text": "The best way to predict the future is to create it.",
+        "attribution": "Peter Drucker"
+      }
+    },
+    {
+      "intent": "summarize",
+      "title": "Key Takeaways",
+      "takeaways": [
+        "Q3 performance strong despite macro headwinds; revenue within 2% of plan",
+        "Enterprise pipeline is robust with 3 deals >$1M; SMB churn requires immediate action",
+        "Board decision on strategic direction needed by end of Q4 2026"
+      ],
+      "action": "Approve formation of Strategic Evaluation Committee"
+    },
+    {
+      "intent": "close",
+      "title": "Thank You",
+      "subtitle": "Questions & Discussion",
+      "contact": "strategy@acme.com"
+    }
+  ]
+}

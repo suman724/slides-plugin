@@ -1,0 +1,3575 @@
+{
+  "version": "2.0.0",
+  "generated_at": "2026-04-09T02:24:42.053785+00:00",
+  "source_count": 33,
+  "palettes": [
+    {
+      "id": "palette-01-professional",
+      "mood": "professional",
+      "temperature": "cool",
+      "source_ids": [
+        "automizer_charts",
+        "automizer_images",
+        "automizer_root_template",
+        "automizer_shapes",
+        "automizer_smartart",
+        "automizer_tables",
+        "blockchain_presentation",
+        "coreoz_template",
+        "gbif_conservation",
+        "gbif_frequently_used",
+        "gbif_icons",
+        "gbif_infographics",
+        "m3dev_template",
+        "metaverse_presentation",
+        "microsoft_workshop_presentation",
+        "microsoft_workshop_slides",
+        "nlnet_poster",
+        "paris_france",
+        "sample_templates",
+        "sc-aemelia",
+        "sc-dark-minimalist",
+        "sc-laertes",
+        "sc-othello",
+        "sc-salerio",
+        "sg-gradient-minimalist",
+        "stella_bullets_template",
+        "stella_images_template",
+        "stella_table_template"
+      ],
+      "colors": {
+        "primary": "#44546A",
+        "secondary": "#4472C4",
+        "accent": "#ED7D31",
+        "accent_alt": "#A5A5A5",
+        "text_primary": "#000000",
+        "text_secondary": "#4A4A4A",
+        "text_on_dark": "#FFFFFF",
+        "background": "#FFFFFF",
+        "background_alt": "#E7E6E6",
+        "positive": "#2D8F5E",
+        "negative": "#C0392B"
+      },
+      "chart_colors": [
+        "#44546A",
+        "#ED7D31",
+        "#A5A5A5",
+        "#4472C4",
+        "#C0392B",
+        "#6C5B7B"
+      ],
+      "gradient_pairs": [
+        [
+          "#44546A",
+          "#4472C4"
+        ]
+      ]
+    },
+    {
+      "id": "palette-02-professional",
+      "mood": "professional",
+      "temperature": "neutral",
+      "source_ids": [
+        "lastig_template_v3",
+        "sg-minimalist-business"
+      ],
+      "colors": {
+        "primary": "#000000",
+        "secondary": "#215CAF",
+        "accent": "#007894",
+        "accent_alt": "#627313",
+        "text_primary": "#000000",
+        "text_secondary": "#4A4A4A",
+        "text_on_dark": "#FFFFFF",
+        "background": "#FFFFFF",
+        "background_alt": "#FFFFFF",
+        "positive": "#2D8F5E",
+        "negative": "#C0392B"
+      },
+      "chart_colors": [
+        "#000000",
+        "#007894",
+        "#627313",
+        "#215CAF",
+        "#C0392B",
+        "#6C5B7B"
+      ],
+      "gradient_pairs": [
+        [
+          "#000000",
+          "#215CAF"
+        ]
+      ]
+    },
+    {
+      "id": "palette-03-professional",
+      "mood": "professional",
+      "temperature": "neutral",
+      "source_ids": [
+        "mckinsey-sample-PPT",
+        "sg-simple-business"
+      ],
+      "colors": {
+        "primary": "#A7A7A7",
+        "secondary": "#4F81BD",
+        "accent": "#C0504D",
+        "accent_alt": "#9BBB59",
+        "text_primary": "#000000",
+        "text_secondary": "#4A4A4A",
+        "text_on_dark": "#FFFFFF",
+        "background": "#FFFFFF",
+        "background_alt": "#535353",
+        "positive": "#2D8F5E",
+        "negative": "#C0392B"
+      },
+      "chart_colors": [
+        "#A7A7A7",
+        "#C0504D",
+        "#9BBB59",
+        "#4F81BD",
+        "#C0392B",
+        "#6C5B7B"
+      ],
+      "gradient_pairs": [
+        [
+          "#A7A7A7",
+          "#4F81BD"
+        ]
+      ]
+    },
+    {
+      "id": "palette-04-professional",
+      "mood": "professional",
+      "temperature": "cool",
+      "source_ids": [
+        "sc-consulting-pitch-deck"
+      ],
+      "colors": {
+        "primary": "#5CFF86",
+        "secondary": "#FE545E",
+        "accent": "#7D2AE7",
+        "accent_alt": "#395E89",
+        "text_primary": "#0F2133",
+        "text_secondary": "#4A4A4A",
+        "text_on_dark": "#FFFFFF",
+        "background": "#FFFFFF",
+        "background_alt": "#006EFF",
+        "positive": "#2D8F5E",
+        "negative": "#C0392B"
+      },
+      "chart_colors": [
+        "#5CFF86",
+        "#7D2AE7",
+        "#395E89",
+        "#FE545E",
+        "#C0392B",
+        "#6C5B7B"
+      ],
+      "gradient_pairs": [
+        [
+          "#5CFF86",
+          "#FE545E"
+        ]
+      ]
+    }
+  ],
+  "typography_patterns": [
+    {
+      "id": "typo-arial",
+      "font_family": "Arial",
+      "fallback": "Calibri",
+      "source_ids": [
+        "sample_templates",
+        "sc-aemelia",
+        "sc-consulting-pitch-deck",
+        "sc-laertes",
+        "sc-othello",
+        "sc-salerio",
+        "sg-minimalist-business",
+        "sg-simple-business"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 96.0,
+          "bold": false
+        },
+        "title": {
+          "size_pt": 60.0,
+          "bold": false
+        },
+        "heading": {
+          "size_pt": 48.0,
+          "bold": false
+        },
+        "body": {
+          "size_pt": 12.0,
+          "bold": false
+        },
+        "caption": {
+          "size_pt": 10.0,
+          "bold": false
+        }
+      }
+    },
+    {
+      "id": "typo-calibri",
+      "font_family": "Calibri",
+      "fallback": "Arial",
+      "source_ids": [
+        "automizer_shapes",
+        "automizer_tables",
+        "coreoz_template",
+        "microsoft_workshop_slides",
+        "paris_france"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 66.0,
+          "bold": false
+        },
+        "title": {
+          "size_pt": 44.0,
+          "bold": false
+        },
+        "heading": {
+          "size_pt": 25.0,
+          "bold": false
+        },
+        "body": {
+          "size_pt": 14.0,
+          "bold": false
+        },
+        "caption": {
+          "size_pt": 10.0,
+          "bold": false
+        }
+      }
+    },
+    {
+      "id": "typo-rubik",
+      "font_family": "Rubik",
+      "fallback": "Bitter",
+      "source_ids": [
+        "gbif_conservation",
+        "gbif_frequently_used",
+        "gbif_infographics"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 88.0,
+          "bold": true
+        },
+        "title": {
+          "size_pt": 60.0,
+          "bold": false
+        },
+        "heading": {
+          "size_pt": 32.0,
+          "bold": false
+        }
+      }
+    },
+    {
+      "id": "typo-gill-sans-mt",
+      "font_family": "Gill Sans MT",
+      "fallback": "Arial",
+      "source_ids": [
+        "blockchain_presentation"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 40.0,
+          "bold": false
+        },
+        "title": {
+          "size_pt": 26.0,
+          "bold": false
+        },
+        "heading": {
+          "size_pt": 24.0,
+          "bold": false
+        }
+      }
+    },
+    {
+      "id": "typo-segoe-ui",
+      "font_family": "Segoe UI",
+      "fallback": "Arial Black",
+      "source_ids": [
+        "metaverse_presentation"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 48.0,
+          "bold": false
+        },
+        "title": {
+          "size_pt": 44.0,
+          "bold": false
+        },
+        "heading": {
+          "size_pt": 40.0,
+          "bold": true
+        },
+        "caption": {
+          "size_pt": 10.0,
+          "bold": false
+        }
+      }
+    },
+    {
+      "id": "typo-neue-haas-grotesk-text-pro",
+      "font_family": "Neue Haas Grotesk Text Pro",
+      "fallback": "Arial",
+      "source_ids": [
+        "microsoft_workshop_presentation"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 72.0,
+          "bold": false
+        },
+        "title": {
+          "size_pt": 67.0,
+          "bold": false
+        },
+        "heading": {
+          "size_pt": 40.0,
+          "bold": false
+        }
+      }
+    },
+    {
+      "id": "typo-cambria",
+      "font_family": "Cambria",
+      "fallback": "Times New Roman",
+      "source_ids": [
+        "nlnet_poster"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 36.0,
+          "bold": true
+        },
+        "title": {
+          "size_pt": 28.0,
+          "bold": true
+        },
+        "heading": {
+          "size_pt": 24.0,
+          "bold": false
+        },
+        "body": {
+          "size_pt": 14.0,
+          "bold": false
+        },
+        "caption": {
+          "size_pt": 9.8,
+          "bold": false
+        }
+      }
+    },
+    {
+      "id": "typo-inter-medium",
+      "font_family": "Inter Medium",
+      "fallback": "Inter",
+      "source_ids": [
+        "sc-dark-minimalist"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 130.3,
+          "bold": false
+        },
+        "title": {
+          "size_pt": 88.0,
+          "bold": false
+        },
+        "heading": {
+          "size_pt": 64.0,
+          "bold": false
+        },
+        "body": {
+          "size_pt": 12.0,
+          "bold": false
+        }
+      }
+    },
+    {
+      "id": "typo-kollektif-bold",
+      "font_family": "Kollektif Bold",
+      "fallback": "Kollektif",
+      "source_ids": [
+        "sg-gradient-minimalist"
+      ],
+      "hierarchy": {
+        "display": {
+          "size_pt": 267.1,
+          "bold": true
+        },
+        "title": {
+          "size_pt": 188.3,
+          "bold": true
+        },
+        "heading": {
+          "size_pt": 150.9,
+          "bold": true
+        },
+        "body": {
+          "size_pt": 14.0,
+          "bold": false
+        }
+      }
+    }
+  ],
+  "discovered_patterns": [
+    {
+      "id": "discovered-explain-1col-v71",
+      "purpose": "explain",
+      "source_count": 38,
+      "confidence": 1.0,
+      "source_ids": [
+        "microsoft_workshop_presentation",
+        "mckinsey-sample-PPT",
+        "sg-simple-business",
+        "sg-minimalist-business",
+        "microsoft_workshop_slides",
+        "sc-laertes"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.078,
+            "top": 0.0865,
+            "width": 0.8425,
+            "height": 0.0938
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0784,
+            "top": 0.2337,
+            "width": 0.8421,
+            "height": 0.1867
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-section_break-1col-v34",
+      "purpose": "section_break",
+      "source_count": 36,
+      "confidence": 1.0,
+      "source_ids": [
+        "sc-othello",
+        "gbif_frequently_used",
+        "sg-simple-business",
+        "sg-minimalist-business",
+        "sg-gradient-minimalist",
+        "gbif_icons",
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.078,
+            "top": 0.0865,
+            "width": 0.8418,
+            "height": 0.1066
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v33",
+      "purpose": "illustrate",
+      "source_count": 30,
+      "confidence": 1.0,
+      "source_ids": [
+        "gbif_frequently_used",
+        "sg-simple-business",
+        "metaverse_presentation",
+        "sg-minimalist-business",
+        "gbif_icons"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.029,
+            "top": 0.0784,
+            "width": 0.9421,
+            "height": 0.1066
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.1896,
+            "top": 0.2767,
+            "width": 0.4658,
+            "height": 0.4789
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v5",
+      "purpose": "explain",
+      "source_count": 20,
+      "confidence": 1.0,
+      "source_ids": [
+        "sample_templates",
+        "sg-simple-business",
+        "sg-minimalist-business",
+        "automizer_shapes",
+        "sc-dark-minimalist",
+        "microsoft_workshop_slides",
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0789,
+            "top": 0.3279,
+            "width": 0.4583,
+            "height": 0.192
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v57",
+      "purpose": "explain",
+      "source_count": 14,
+      "confidence": 1.0,
+      "source_ids": [
+        "sc-othello",
+        "lastig_template_v3",
+        "sg-simple-business",
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck",
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.075,
+            "top": 0.3332,
+            "width": 0.6693,
+            "height": 0.236
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-emphasize-1col-v85",
+      "purpose": "emphasize",
+      "source_count": 13,
+      "confidence": 0.67,
+      "source_ids": [
+        "microsoft_workshop_slides",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0482,
+            "top": 0.1539,
+            "width": 0.9038,
+            "height": 0.0765
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0481,
+            "top": 0.3443,
+            "width": 0.9038,
+            "height": 0.5828
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-explain-1col-v44",
+      "purpose": "explain",
+      "source_count": 11,
+      "confidence": 1.0,
+      "source_ids": [
+        "sg-minimalist-business",
+        "microsoft_workshop_slides",
+        "sc-consulting-pitch-deck",
+        "gbif_frequently_used"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.05,
+            "top": 0.3489,
+            "width": 0.9,
+            "height": 0.1244
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0482,
+            "top": 0.0667,
+            "width": 0.9038,
+            "height": 0.08
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v42",
+      "purpose": "illustrate",
+      "source_count": 10,
+      "confidence": 1.0,
+      "source_ids": [
+        "gbif_frequently_used",
+        "sg-simple-business",
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck",
+        "gbif_icons"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.029,
+            "top": 0.0784,
+            "width": 0.9421,
+            "height": 0.1066
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.3192,
+            "top": 0.3163,
+            "width": 0.2438,
+            "height": 0.4073
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v49",
+      "purpose": "illustrate",
+      "source_count": 8,
+      "confidence": 0.8,
+      "source_ids": [
+        "sample_templates",
+        "gbif_icons",
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0975,
+            "top": 0.2377,
+            "width": 0.2959,
+            "height": 0.3366
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v55",
+      "purpose": "explain",
+      "source_count": 8,
+      "confidence": 0.8,
+      "source_ids": [
+        "lastig_template_v3",
+        "sc-salerio",
+        "sg-gradient-minimalist",
+        "microsoft_workshop_slides",
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0507,
+            "top": 0.5177,
+            "width": 0.5217,
+            "height": 0.2255
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v127",
+      "purpose": "illustrate",
+      "source_count": 8,
+      "confidence": 0.8,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck",
+        "sc-dark-minimalist",
+        "sg-gradient-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.2908,
+            "top": 0.2135,
+            "width": 0.46,
+            "height": 0.5845
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.4052,
+            "top": 0.4078,
+            "width": 0.3977,
+            "height": 0.245
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v136",
+      "purpose": "explain",
+      "source_count": 8,
+      "confidence": 0.8,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3034,
+            "top": 0.255,
+            "width": 0.4017,
+            "height": 0.2848
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.47,
+            "top": 0.9139,
+            "width": 0.09,
+            "height": 0.0602
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v138",
+      "purpose": "explain",
+      "source_count": 8,
+      "confidence": 0.8,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0883,
+            "top": 0.4373,
+            "width": 0.798,
+            "height": 0.2255
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.47,
+            "top": 0.9014,
+            "width": 0.12,
+            "height": 0.0614
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-tabulate-1col-v142",
+      "purpose": "tabulate",
+      "source_count": 8,
+      "confidence": 0.8,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0891,
+            "top": 0.0763,
+            "width": 0.6041,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "table",
+          "bounds_pct": {
+            "left": 0.0874,
+            "top": 0.2867,
+            "width": 0.3281,
+            "height": 0.5833
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8331,
+            "top": 0.9014,
+            "width": 0.12,
+            "height": 0.0614
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v14",
+      "purpose": "illustrate",
+      "source_count": 7,
+      "confidence": 0.7,
+      "source_ids": [
+        "sg-simple-business",
+        "metaverse_presentation",
+        "sg-minimalist-business",
+        "blockchain_presentation",
+        "sc-dark-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.078,
+            "top": 0.8218,
+            "width": 0.8425,
+            "height": 0.0958
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.078,
+            "top": 0.253,
+            "width": 0.4284,
+            "height": 0.524
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.078,
+            "top": 0.0865,
+            "width": 0.844,
+            "height": 0.1113
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-compare-2col-v39",
+      "purpose": "compare",
+      "source_count": 7,
+      "confidence": 0.7,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck",
+        "gbif_frequently_used",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3962,
+            "top": 0.3639,
+            "width": 0.3789,
+            "height": 0.4119
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0787,
+            "top": 0.0865,
+            "width": 0.665,
+            "height": 0.1113
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v126",
+      "purpose": "illustrate",
+      "source_count": 7,
+      "confidence": 0.47,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.1813,
+            "top": 0.2436,
+            "width": 0.3174,
+            "height": 0.566
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.2211,
+            "top": 0.3967,
+            "width": 0.3691,
+            "height": 0.1223
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-section_break-1col-v141",
+      "purpose": "section_break",
+      "source_count": 7,
+      "confidence": 0.7,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0891,
+            "top": 0.0703,
+            "width": 0.8129,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8331,
+            "top": 0.9014,
+            "width": 0.12,
+            "height": 0.0614
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v149",
+      "purpose": "explain",
+      "source_count": 7,
+      "confidence": 0.7,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0891,
+            "top": 0.0763,
+            "width": 0.6041,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0423,
+            "top": 0.461,
+            "width": 0.9161,
+            "height": 0.1966
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8331,
+            "top": 0.9014,
+            "width": 0.12,
+            "height": 0.0614
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-compare-2col-v82",
+      "purpose": "compare",
+      "source_count": 6,
+      "confidence": 0.4,
+      "source_ids": [
+        "microsoft_workshop_slides",
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1165,
+            "top": 0.0535,
+            "width": 0.4279,
+            "height": 0.2436
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v110",
+      "purpose": "illustrate",
+      "source_count": 6,
+      "confidence": 0.6,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck",
+        "sc-aemelia",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0672,
+            "top": 0.2909,
+            "width": 0.3497,
+            "height": 0.2436
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.5071,
+            "top": 0.1632,
+            "width": 0.2895,
+            "height": 0.6622
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-emphasize-1col-v143",
+      "purpose": "emphasize",
+      "source_count": 6,
+      "confidence": 0.6,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0594,
+            "top": 0.1935,
+            "width": 0.8568,
+            "height": 0.6806
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.1436,
+            "top": 0.0671,
+            "width": 0.6041,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.6515,
+            "top": 0.9014,
+            "width": 0.12,
+            "height": 0.0614
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v148",
+      "purpose": "illustrate",
+      "source_count": 6,
+      "confidence": 0.6,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.6515,
+            "top": 0.9014,
+            "width": 0.1414,
+            "height": 0.0614
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1133,
+            "top": 0.1902,
+            "width": 0.3246,
+            "height": 0.6195
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.4672,
+            "top": 0.1734,
+            "width": 0.2823,
+            "height": 0.6522
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-tabulate-1col-v183",
+      "purpose": "tabulate",
+      "source_count": 6,
+      "confidence": 0.4,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.078,
+            "top": 0.0865,
+            "width": 0.844,
+            "height": 0.1113
+          }
+        },
+        {
+          "role": "table",
+          "bounds_pct": {
+            "left": 0.0787,
+            "top": 0.3061,
+            "width": 0.3281,
+            "height": 0.5833
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v22",
+      "purpose": "illustrate",
+      "source_count": 5,
+      "confidence": 0.5,
+      "source_ids": [
+        "gbif_conservation",
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.47,
+            "top": 0.8952,
+            "width": 0.1627,
+            "height": 0.0589
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0601,
+            "top": 0.0786,
+            "width": 0.6041,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.1836,
+            "top": 0.3015,
+            "width": 0.3726,
+            "height": 0.5771
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v23",
+      "purpose": "illustrate",
+      "source_count": 5,
+      "confidence": 0.5,
+      "source_ids": [
+        "gbif_conservation",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0833,
+            "top": 0.0786,
+            "width": 0.4783,
+            "height": 0.149
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0833,
+            "top": 0.2581,
+            "width": 0.4091,
+            "height": 0.6115
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.44,
+            "top": 0.8931,
+            "width": 0.12,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.5638,
+            "top": 0.1768,
+            "width": 0.4362,
+            "height": 0.7967
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-emphasize-1col-v37",
+      "purpose": "emphasize",
+      "source_count": 5,
+      "confidence": 0.5,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sg-simple-business",
+        "gbif_frequently_used",
+        "sg-gradient-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0563,
+            "top": 0.0865,
+            "width": 0.8875,
+            "height": 0.1928
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0865,
+            "top": 0.0,
+            "width": 0.5643,
+            "height": 1.0
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-closing-1col-v116",
+      "purpose": "closing",
+      "source_count": 5,
+      "confidence": 0.5,
+      "source_ids": [
+        "sc-othello",
+        "sg-simple-business",
+        "sg-minimalist-business",
+        "sc-salerio",
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0755,
+            "top": 0.6397,
+            "width": 0.849,
+            "height": 0.1735
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-opening-1col-v4",
+      "purpose": "opening",
+      "source_count": 4,
+      "confidence": 0.4,
+      "source_ids": [
+        "automizer_root_template",
+        "stella_bullets_template",
+        "automizer_shapes",
+        "stella_images_template"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0875,
+            "top": 0.1019,
+            "width": 0.825,
+            "height": 0.2574
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.125,
+            "top": 0.396,
+            "width": 0.75,
+            "height": 0.3207
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-opening-1col-v7",
+      "purpose": "opening",
+      "source_count": 4,
+      "confidence": 0.4,
+      "source_ids": [
+        "automizer_smartart",
+        "sc-othello",
+        "sc-aemelia",
+        "sc-dark-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1461,
+            "top": 0.3695,
+            "width": 0.627,
+            "height": 0.4128
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v18",
+      "purpose": "illustrate",
+      "source_count": 4,
+      "confidence": 0.27,
+      "source_ids": [
+        "sc-consulting-pitch-deck",
+        "blockchain_presentation"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0282,
+            "top": 0.2354,
+            "width": 0.8459,
+            "height": 0.6526
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0459,
+            "top": 0.0406,
+            "width": 0.4956,
+            "height": 0.7313
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0792,
+            "top": 0.1459,
+            "width": 0.8387,
+            "height": 0.2151
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v24",
+      "purpose": "explain",
+      "source_count": 4,
+      "confidence": 0.4,
+      "source_ids": [
+        "gbif_conservation",
+        "sc-othello",
+        "sc-salerio",
+        "mckinsey-sample-PPT"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0696,
+            "top": 0.0775,
+            "width": 0.752,
+            "height": 0.0996
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1167,
+            "top": 0.2654,
+            "width": 0.6905,
+            "height": 0.6082
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.2625,
+            "top": 0.9041,
+            "width": 0.2464,
+            "height": 0.0557
+          }
+        }
+      ],
+      "decorative": [
+        "circle_marker",
+        "shape",
+        "vertical_stripe"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v29",
+      "purpose": "illustrate",
+      "source_count": 4,
+      "confidence": 0.27,
+      "source_ids": [
+        "sg-minimalist-business",
+        "gbif_frequently_used"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.029,
+            "top": 0.0784,
+            "width": 0.9421,
+            "height": 0.1066
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0923,
+            "top": 0.2826,
+            "width": 0.3544,
+            "height": 0.5335
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.5907,
+            "top": 0.3063,
+            "width": 0.2622,
+            "height": 0.5115
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v32",
+      "purpose": "explain",
+      "source_count": 4,
+      "confidence": 0.4,
+      "source_ids": [
+        "microsoft_workshop_presentation",
+        "gbif_frequently_used",
+        "microsoft_workshop_slides"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0981,
+            "top": 0.1443,
+            "width": 0.8038,
+            "height": 0.2121
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1254,
+            "top": 0.4127,
+            "width": 0.6714,
+            "height": 0.2814
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "vertical_stripe"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v60",
+      "purpose": "explain",
+      "source_count": 4,
+      "confidence": 0.13,
+      "source_ids": [
+        "lastig_template_v3"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.06,
+            "top": 0.038,
+            "width": 0.8799,
+            "height": 0.1312
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.06,
+            "top": 0.206,
+            "width": 0.8799,
+            "height": 0.6824
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8591,
+            "top": 0.9511,
+            "width": 0.0502,
+            "height": 0.0315
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-compare-2col-v72",
+      "purpose": "compare",
+      "source_count": 4,
+      "confidence": 0.4,
+      "source_ids": [
+        "sc-dark-minimalist",
+        "sc-aemelia",
+        "mckinsey-sample-PPT",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.504,
+            "top": 0.3094,
+            "width": 0.3611,
+            "height": 0.3056
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "vertical_stripe",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v76",
+      "purpose": "illustrate",
+      "source_count": 4,
+      "confidence": 0.27,
+      "source_ids": [
+        "metaverse_presentation",
+        "sc-dark-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.05,
+            "top": 0.04,
+            "width": 0.9,
+            "height": 0.1037
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0636,
+            "top": 0.2496,
+            "width": 0.4735,
+            "height": 0.4735
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-compare-2col-v111",
+      "purpose": "compare",
+      "source_count": 4,
+      "confidence": 0.27,
+      "source_ids": [
+        "sc-aemelia",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.2469,
+            "top": 0.0995,
+            "width": 0.4461,
+            "height": 0.3144
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v118",
+      "purpose": "illustrate",
+      "source_count": 4,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-consulting-pitch-deck"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.502,
+            "top": 0.1424,
+            "width": 0.4467,
+            "height": 0.6058
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0563,
+            "top": 0.099,
+            "width": 0.6573,
+            "height": 0.125
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-compare-3col-v140",
+      "purpose": "compare",
+      "source_count": 4,
+      "confidence": 0.27,
+      "source_ids": [
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 3,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0601,
+            "top": 0.0703,
+            "width": 0.8199,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3458,
+            "top": 0.2821,
+            "width": 0.255,
+            "height": 0.5325
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.88,
+            "top": 0.8931,
+            "width": 0.12,
+            "height": 0.1069
+          }
+        }
+      ],
+      "decorative": [
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-compare-1col-v172",
+      "purpose": "compare",
+      "source_count": 4,
+      "confidence": 0.4,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sg-simple-business",
+        "sg-gradient-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0744,
+            "top": 0.4581,
+            "width": 0.8513,
+            "height": 0.2233
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v15",
+      "purpose": "illustrate",
+      "source_count": 3,
+      "confidence": 0.2,
+      "source_ids": [
+        "microsoft_workshop_slides",
+        "blockchain_presentation"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.2652,
+            "top": 0.3239,
+            "width": 0.6644,
+            "height": 0.2332
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.1062,
+            "top": 0.367,
+            "width": 0.3125,
+            "height": 0.5997
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0482,
+            "top": 0.0667,
+            "width": 0.9038,
+            "height": 0.08
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v36",
+      "purpose": "illustrate",
+      "source_count": 3,
+      "confidence": 0.2,
+      "source_ids": [
+        "sc-consulting-pitch-deck",
+        "gbif_frequently_used"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.4391,
+            "top": 0.3095,
+            "width": 0.4205,
+            "height": 0.6381
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-visualize-1col-v40",
+      "purpose": "visualize",
+      "source_count": 3,
+      "confidence": 0.1,
+      "source_ids": [
+        "gbif_frequently_used"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.029,
+            "top": 0.0784,
+            "width": 0.9421,
+            "height": 0.1066
+          }
+        },
+        {
+          "role": "chart",
+          "bounds_pct": {
+            "left": 0.3819,
+            "top": 0.2381,
+            "width": 0.5877,
+            "height": 0.6044
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0865,
+            "top": 0.2381,
+            "width": 0.2363,
+            "height": 0.6044
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-opening-1col-v48",
+      "purpose": "opening",
+      "source_count": 3,
+      "confidence": 0.3,
+      "source_ids": [
+        "gbif_icons",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.075,
+            "top": 0.0784,
+            "width": 0.7847,
+            "height": 0.5759
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v56",
+      "purpose": "illustrate",
+      "source_count": 3,
+      "confidence": 0.3,
+      "source_ids": [
+        "metaverse_presentation",
+        "mckinsey-sample-PPT",
+        "lastig_template_v3"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0592,
+            "top": 0.2133,
+            "width": 0.6329,
+            "height": 0.704
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.5292,
+            "top": 0.195,
+            "width": 0.4506,
+            "height": 0.2663
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v75",
+      "purpose": "illustrate",
+      "source_count": 3,
+      "confidence": 0.3,
+      "source_ids": [
+        "metaverse_presentation",
+        "sg-minimalist-business",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0798,
+            "top": 0.5087,
+            "width": 0.2419,
+            "height": 0.3035
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v77",
+      "purpose": "illustrate",
+      "source_count": 3,
+      "confidence": 0.3,
+      "source_ids": [
+        "metaverse_presentation",
+        "sample_templates",
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0502,
+            "top": 0.4059,
+            "width": 0.5928,
+            "height": 0.1864
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.3591,
+            "top": 0.2362,
+            "width": 0.5221,
+            "height": 0.5401
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-tabulate-1col-v106",
+      "purpose": "tabulate",
+      "source_count": 3,
+      "confidence": 0.1,
+      "source_ids": [
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "table",
+          "bounds_pct": {
+            "left": 0.2724,
+            "top": 0.1044,
+            "width": 0.3281,
+            "height": 0.5833
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0119,
+            "top": 0.0284,
+            "width": 0.1976,
+            "height": 0.2436
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v119",
+      "purpose": "illustrate",
+      "source_count": 3,
+      "confidence": 0.3,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck",
+        "sc-dark-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.4779,
+            "top": 0.1,
+            "width": 0.4437,
+            "height": 0.7999
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0563,
+            "top": 0.4245,
+            "width": 0.4131,
+            "height": 0.2633
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-compare-2col-v150",
+      "purpose": "compare",
+      "source_count": 3,
+      "confidence": 0.3,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0891,
+            "top": 0.0763,
+            "width": 0.6041,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8331,
+            "top": 0.9014,
+            "width": 0.12,
+            "height": 0.0614
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3768,
+            "top": 0.3423,
+            "width": 0.3162,
+            "height": 0.3399
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v165",
+      "purpose": "illustrate",
+      "source_count": 3,
+      "confidence": 0.1,
+      "source_ids": [
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1073,
+            "top": 0.5248,
+            "width": 0.6914,
+            "height": 0.2255
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.3871,
+            "top": 0.0737,
+            "width": 0.2259,
+            "height": 0.4016
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8331,
+            "top": 0.9014,
+            "width": 0.1627,
+            "height": 0.0614
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-compare-2col-v173",
+      "purpose": "compare",
+      "source_count": 3,
+      "confidence": 0.2,
+      "source_ids": [
+        "sg-simple-business",
+        "sg-gradient-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.4865,
+            "top": 0.2867,
+            "width": 0.4462,
+            "height": 0.6133
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0563,
+            "top": 0.1303,
+            "width": 0.4437,
+            "height": 0.1495
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-tabulate-1col-v9",
+      "purpose": "tabulate",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "automizer_tables",
+        "gbif_frequently_used"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "table",
+          "bounds_pct": {
+            "left": 0.2792,
+            "top": 0.2038,
+            "width": 0.2601,
+            "height": 0.3836
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0145,
+            "top": 0.0392,
+            "width": 0.9023,
+            "height": 0.0733
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v17",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "blockchain_presentation"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.2089,
+            "top": 0.2018,
+            "width": 0.6758,
+            "height": 0.7131
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0636,
+            "top": 0.231,
+            "width": 0.6101,
+            "height": 0.6958
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0792,
+            "top": 0.1488,
+            "width": 0.8387,
+            "height": 0.2151
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-compare-2col-v28",
+      "purpose": "compare",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "gbif_frequently_used"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.2252,
+            "top": 0.3261,
+            "width": 0.4267,
+            "height": 0.3732
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.044,
+            "top": 0.8958,
+            "width": 0.7219,
+            "height": 0.0525
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "vertical_stripe"
+      ]
+    },
+    {
+      "id": "discovered-compare-3col-v35",
+      "purpose": "compare",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "gbif_frequently_used"
+      ],
+      "background_type": "solid",
+      "n_columns": 3,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3228,
+            "top": 0.185,
+            "width": 0.2347,
+            "height": 0.3024
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.029,
+            "top": 0.8952,
+            "width": 0.7073,
+            "height": 0.0525
+          }
+        }
+      ],
+      "decorative": [
+        "vertical_stripe"
+      ]
+    },
+    {
+      "id": "discovered-compare-4col-v46",
+      "purpose": "compare",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "metaverse_presentation",
+        "gbif_frequently_used"
+      ],
+      "background_type": "solid",
+      "n_columns": 4,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0394,
+            "top": 0.0593,
+            "width": 0.9211,
+            "height": 0.1051
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3708,
+            "top": 0.2807,
+            "width": 0.2068,
+            "height": 0.3675
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-closing-1col-v47",
+      "purpose": "closing",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "gbif_frequently_used",
+        "lastig_template_v3"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0865,
+            "top": 0.4639,
+            "width": 0.3679,
+            "height": 0.1516
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-opening-1col-v54",
+      "purpose": "opening",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "mckinsey-sample-PPT",
+        "lastig_template_v3"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0742,
+            "top": 0.3295,
+            "width": 0.79,
+            "height": 0.318
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-closing-1col-v78",
+      "purpose": "closing",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "metaverse_presentation",
+        "sample_templates"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1354,
+            "top": 0.3936,
+            "width": 0.5823,
+            "height": 0.1815
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.3203,
+            "top": 0.2235,
+            "width": 0.3535,
+            "height": 0.6177
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v80",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "microsoft_workshop_presentation"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0,
+            "top": 0.0,
+            "width": 0.6929,
+            "height": 1.0
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.6869,
+            "top": 0.2266,
+            "width": 0.3189,
+            "height": 0.5469
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.7297,
+            "top": 0.9262,
+            "width": 0.225,
+            "height": 0.0539
+          }
+        }
+      ],
+      "decorative": [
+        "vertical_stripe",
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v91",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "paris_france"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.2816,
+            "top": -0.031,
+            "width": 0.7159,
+            "height": 1.031
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.7789,
+            "top": 0.0475,
+            "width": 0.0933,
+            "height": 0.6922
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.4523,
+            "top": 0.9917,
+            "width": 0.0994,
+            "height": 0.0695
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker",
+        "vertical_stripe"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v96",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sample_templates",
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.2512,
+            "top": 0.27,
+            "width": 0.479,
+            "height": 0.6816
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0403,
+            "top": 0.0408,
+            "width": 0.5301,
+            "height": 0.2185
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v97",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "sample_templates"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.2569,
+            "top": 0.0832,
+            "width": 0.3133,
+            "height": 0.6309
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v102",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "sc-aemelia"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.2944,
+            "top": 0.0856,
+            "width": 0.6093,
+            "height": 0.2255
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1589,
+            "top": 0.2016,
+            "width": 0.4034,
+            "height": 0.3705
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0,
+            "top": 0.0,
+            "width": 0.2282,
+            "height": 1.0
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-illustrate-1col-v115",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-aemelia",
+        "sc-laertes"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0511,
+            "top": 0.0,
+            "width": 0.8978,
+            "height": 0.0908
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0674,
+            "top": 0.0909,
+            "width": 0.8651,
+            "height": 0.7885
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.0768,
+            "top": 0.1068,
+            "width": 0.8464,
+            "height": 0.7544
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.4349,
+            "top": 0.9011,
+            "width": 0.1303,
+            "height": 0.0695
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "vertical_stripe",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v117",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "sc-consulting-pitch-deck"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0563,
+            "top": 0.0986,
+            "width": 0.5907,
+            "height": 0.1375
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3882,
+            "top": 0.3186,
+            "width": 0.3071,
+            "height": 0.4071
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.4112,
+            "top": 0.2308,
+            "width": 0.3487,
+            "height": 0.6618
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v120",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-consulting-pitch-deck",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.2876,
+            "top": 0.1318,
+            "width": 0.3012,
+            "height": 0.7191
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.13,
+            "top": 0.3722,
+            "width": 0.3846,
+            "height": 0.205
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-3col-v125",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sc-consulting-pitch-deck"
+      ],
+      "background_type": "solid",
+      "n_columns": 3,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0962,
+            "top": 0.0923,
+            "width": 0.8077,
+            "height": 0.1158
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.387,
+            "top": 0.2817,
+            "width": 0.2268,
+            "height": 0.4252
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3884,
+            "top": 0.622,
+            "width": 0.225,
+            "height": 0.208
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-explain-1col-v135",
+      "purpose": "explain",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0746,
+            "top": 0.0733,
+            "width": 0.6975,
+            "height": 0.128
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.0891,
+            "top": 0.3392,
+            "width": 0.3989,
+            "height": 0.3414
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8565,
+            "top": 0.8972,
+            "width": 0.1414,
+            "height": 0.0842
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-compare-2col-v139",
+      "purpose": "compare",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.2849,
+            "top": 0.2661,
+            "width": 0.3838,
+            "height": 0.567
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0746,
+            "top": 0.0733,
+            "width": 0.6975,
+            "height": 0.128
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8565,
+            "top": 0.8972,
+            "width": 0.1414,
+            "height": 0.0842
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-compare-3col-v145",
+      "purpose": "compare",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 3,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0746,
+            "top": 0.0733,
+            "width": 0.6975,
+            "height": 0.128
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3458,
+            "top": 0.415,
+            "width": 0.255,
+            "height": 0.2963
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.8565,
+            "top": 0.8972,
+            "width": 0.1414,
+            "height": 0.0842
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-section_break-1col-v146",
+      "purpose": "section_break",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-laertes",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.1313,
+            "top": 0.0086,
+            "width": 0.7375,
+            "height": 0.1608
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.44,
+            "top": 0.8972,
+            "width": 0.1414,
+            "height": 0.0842
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "accent_bar"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-1col-v147",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "sc-laertes"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.44,
+            "top": 0.8931,
+            "width": 0.12,
+            "height": 0.1069
+          }
+        },
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.44,
+            "top": 0.0,
+            "width": 0.4914,
+            "height": 0.8931
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.1027,
+            "top": 0.0879,
+            "width": 0.2453,
+            "height": 0.7174
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-compare-4col-v151",
+      "purpose": "compare",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-othello",
+        "sc-laertes"
+      ],
+      "background_type": "solid",
+      "n_columns": 4,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0287,
+            "top": 0.0,
+            "width": 0.9427,
+            "height": 0.0881
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.455,
+            "top": 0.9098,
+            "width": 0.09,
+            "height": 0.0829
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.4115,
+            "top": 0.1103,
+            "width": 0.1824,
+            "height": 0.3055
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-compare-2col-v154",
+      "purpose": "compare",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "sc-othello"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.198,
+            "top": 0.1084,
+            "width": 0.6041,
+            "height": 0.0929
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.2346,
+            "top": 0.3069,
+            "width": 0.3679,
+            "height": 0.3937
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.47,
+            "top": 0.9264,
+            "width": 0.06,
+            "height": 0.0589
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-explain-1col-v156",
+      "purpose": "explain",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sc-othello",
+        "sc-salerio"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1042,
+            "top": 0.4997,
+            "width": 0.4478,
+            "height": 0.2255
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.6515,
+            "top": 0.9139,
+            "width": 0.1114,
+            "height": 0.0602
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-compare-3col-v158",
+      "purpose": "compare",
+      "source_count": 2,
+      "confidence": 0.07,
+      "source_ids": [
+        "sc-othello"
+      ],
+      "background_type": "solid",
+      "n_columns": 3,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.198,
+            "top": 0.1084,
+            "width": 0.6041,
+            "height": 0.0929
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.3539,
+            "top": 0.3284,
+            "width": 0.2903,
+            "height": 0.4642
+          }
+        },
+        {
+          "role": "footer",
+          "bounds_pct": {
+            "left": 0.47,
+            "top": 0.9264,
+            "width": 0.06,
+            "height": 0.0589
+          }
+        }
+      ],
+      "decorative": []
+    },
+    {
+      "id": "discovered-opening-1col-v171",
+      "purpose": "opening",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sg-gradient-minimalist"
+      ],
+      "background_type": "solid",
+      "n_columns": 1,
+      "zones": [
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.1137,
+            "top": 0.3257,
+            "width": 0.7725,
+            "height": 0.3222
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-explain-4col-v185",
+      "purpose": "explain",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 4,
+      "zones": [
+        {
+          "role": "title",
+          "bounds_pct": {
+            "left": 0.0968,
+            "top": 0.1129,
+            "width": 0.8063,
+            "height": 0.0938
+          }
+        },
+        {
+          "role": "content",
+          "bounds_pct": {
+            "left": 0.14,
+            "top": 0.2293,
+            "width": 0.7191,
+            "height": 0.1139
+          }
+        },
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.4151,
+            "top": 0.4916,
+            "width": 0.1584,
+            "height": 0.2328
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    },
+    {
+      "id": "discovered-illustrate-2col-v186",
+      "purpose": "illustrate",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 2,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.3765,
+            "top": 0.2372,
+            "width": 0.2726,
+            "height": 0.2677
+          }
+        }
+      ],
+      "decorative": [
+        "shape",
+        "circle_marker"
+      ]
+    },
+    {
+      "id": "discovered-tabulate-3col-v187",
+      "purpose": "tabulate",
+      "source_count": 2,
+      "confidence": 0.13,
+      "source_ids": [
+        "sg-minimalist-business",
+        "sg-simple-business"
+      ],
+      "background_type": "solid",
+      "n_columns": 3,
+      "zones": [
+        {
+          "role": "media",
+          "bounds_pct": {
+            "left": 0.3663,
+            "top": 0.6191,
+            "width": 0.2607,
+            "height": 0.1956
+          }
+        },
+        {
+          "role": "table",
+          "bounds_pct": {
+            "left": 0.5081,
+            "top": 0.4142,
+            "width": 0.3281,
+            "height": 0.5833
+          }
+        }
+      ],
+      "decorative": [
+        "shape"
+      ]
+    }
+  ],
+  "decorative_elements": {
+    "shape": {
+      "total_count": 6349,
+      "median_bounds_pct": {
+        "left": 0.1174,
+        "top": 0.2395,
+        "width": 0.1203,
+        "height": 0.0852
+      }
+    },
+    "circle_marker": {
+      "total_count": 781,
+      "median_bounds_pct": {
+        "left": 0.1728,
+        "top": 0.5388,
+        "width": 0.0441,
+        "height": 0.0539
+      }
+    },
+    "accent_bar": {
+      "total_count": 107,
+      "median_bounds_pct": {
+        "left": 0.4945,
+        "top": 0.8426,
+        "width": 0.1592,
+        "height": 0.0
+      }
+    },
+    "vertical_stripe": {
+      "total_count": 50,
+      "median_bounds_pct": {
+        "left": 0.0964,
+        "top": 0.2375,
+        "width": 0.0002,
+        "height": 0.25
+      }
+    }
+  },
+  "spacing_defaults": {
+    "margin_left_pct": 0.1898,
+    "margin_top_pct": 0.2451,
+    "margin_right_pct": 0.1979,
+    "margin_bottom_pct": 0.3073,
+    "typical_gutter_pct": 0.03
+  }
+}
